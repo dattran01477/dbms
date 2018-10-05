@@ -12,6 +12,7 @@ using MilkTea_app.DTO;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace MilkTea_app
 {
@@ -133,6 +134,38 @@ namespace MilkTea_app
         private void pnBtnProducts_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnOrderDrinks_Click(object sender, EventArgs e)
+        {
+            GridView view = gridControlOder.MainView as GridView;
+            
+            for (int i = 0; i < view.RowCount; i++)
+            {
+                int rowHandle = view.GetVisibleRowHandle(i);
+                if (view.IsGroupRow(rowHandle))
+                {
+                    string text = view.GetGroupRowDisplayText(rowHandle);
+                    MessageBox.Show(text);
+                }
+                if (view.IsDataRow(rowHandle))
+                {
+                    string datmon = "";
+                    int j = 0;
+                    for (int c = 0; c < view.VisibleColumns.Count; c++)
+                    {
+                        object v = view.GetRowCellValue(rowHandle, view.VisibleColumns[c]);
+                        datmon = datmon + v.ToString() + ",";
+                        if(j==2)
+                        {
+                            MessageBox.Show(datmon);
+                            j = 0;
+                            datmon = "";
+                        }
+                        j++;
+                    }
+                }
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
