@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridControlOder = new DevExpress.XtraGrid.GridControl();
             this.gridViewOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -36,8 +37,9 @@
             this.price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pnBtnProducts = new System.Windows.Forms.Panel();
             this.pnMenu = new System.Windows.Forms.Panel();
-            this.btnOrderDrinks = new System.Windows.Forms.Button();
             this.txtSum = new System.Windows.Forms.TextBox();
+            this.btnOrderDrinks = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).BeginInit();
@@ -133,24 +135,6 @@
             this.pnMenu.Size = new System.Drawing.Size(208, 552);
             this.pnMenu.TabIndex = 1;
             // 
-            // btnOrderDrinks
-            // 
-            this.btnOrderDrinks.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnOrderDrinks.FlatAppearance.BorderSize = 2;
-            this.btnOrderDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnOrderDrinks.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderDrinks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
-            this.btnOrderDrinks.Image = global::MilkTea_app.Properties.Resources.tray__1_;
-            this.btnOrderDrinks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderDrinks.Location = new System.Drawing.Point(-5, 486);
-            this.btnOrderDrinks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnOrderDrinks.Name = "btnOrderDrinks";
-            this.btnOrderDrinks.Size = new System.Drawing.Size(213, 62);
-            this.btnOrderDrinks.TabIndex = 1;
-            this.btnOrderDrinks.Text = "Thanh Toán";
-            this.btnOrderDrinks.UseCompatibleTextRendering = true;
-            this.btnOrderDrinks.UseVisualStyleBackColor = true;
-            // 
             // txtSum
             // 
             this.txtSum.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,6 +142,30 @@
             this.txtSum.Name = "txtSum";
             this.txtSum.Size = new System.Drawing.Size(136, 22);
             this.txtSum.TabIndex = 2;
+            // 
+            // btnOrderDrinks
+            // 
+            this.btnOrderDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnOrderDrinks.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnOrderDrinks.FlatAppearance.BorderSize = 0;
+            this.btnOrderDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderDrinks.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderDrinks.ForeColor = System.Drawing.Color.White;
+            this.btnOrderDrinks.Image = global::MilkTea_app.Properties.Resources.tray__1_;
+            this.btnOrderDrinks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderDrinks.Location = new System.Drawing.Point(4, 486);
+            this.btnOrderDrinks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnOrderDrinks.Name = "btnOrderDrinks";
+            this.btnOrderDrinks.Size = new System.Drawing.Size(200, 62);
+            this.btnOrderDrinks.TabIndex = 1;
+            this.btnOrderDrinks.Text = "Thanh Toán";
+            this.btnOrderDrinks.UseCompatibleTextRendering = true;
+            this.btnOrderDrinks.UseVisualStyleBackColor = false;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this.btnOrderDrinks;
             // 
             // PanelOrder
             // 
@@ -188,5 +196,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn amount;
         private DevExpress.XtraGrid.Columns.GridColumn price;
         private System.Windows.Forms.TextBox txtSum;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

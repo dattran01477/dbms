@@ -33,8 +33,7 @@ namespace MilkTea_app
 
         public PanelOrder()
         {
-            InitializeComponent();
-           
+            InitializeComponent();                
         }
        public void SetWidthHeight(int width,int height)
         {
