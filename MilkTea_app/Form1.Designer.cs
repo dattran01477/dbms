@@ -42,6 +42,7 @@
             this.pnTopBar = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.pnDGV = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelOrder1 = new MilkTea_app.PanelOrder();
             this.SideBar.SuspendLayout();
             this.pnLogo.SuspendLayout();
@@ -219,6 +220,7 @@
             // 
             // pnDGV
             // 
+            this.pnDGV.Controls.Add(this.bunifuCustomLabel1);
             this.pnDGV.Controls.Add(this.panelOrder1);
             this.pnDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnDGV.Location = new System.Drawing.Point(231, 73);
@@ -226,15 +228,28 @@
             this.pnDGV.Size = new System.Drawing.Size(1144, 601);
             this.pnDGV.TabIndex = 2;
             // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(370, 37);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(93, 34);
+            this.bunifuCustomLabel1.TabIndex = 1;
+            this.bunifuCustomLabel1.Text = "Order";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelOrder1
             // 
             this.panelOrder1.CollectorName = null;
             this.panelOrder1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelOrder1.Height1 = 0;
-            this.panelOrder1.Location = new System.Drawing.Point(0, 0);
-            this.panelOrder1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panelOrder1.Location = new System.Drawing.Point(0, -78);
+            this.panelOrder1.Margin = new System.Windows.Forms.Padding(8, 3, 8, 3);
             this.panelOrder1.Name = "panelOrder1";
-            this.panelOrder1.Size = new System.Drawing.Size(1144, 601);
+            this.panelOrder1.Size = new System.Drawing.Size(1144, 679);
             this.panelOrder1.TabIndex = 0;
             this.panelOrder1.Width1 = 0;
             // 
@@ -260,6 +275,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnTopBar.ResumeLayout(false);
             this.pnDGV.ResumeLayout(false);
+            this.pnDGV.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -278,9 +294,10 @@
         private System.Windows.Forms.Button btnOrderDrinks;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel pnDGV;
-        private PanelOrder panelOrder1;
         private System.Windows.Forms.Panel pnOrderTopping;
         private System.Windows.Forms.Button btnTopping;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private PanelOrder panelOrder1;
     }
 }
 

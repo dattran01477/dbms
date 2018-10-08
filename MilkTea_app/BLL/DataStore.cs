@@ -102,6 +102,34 @@ namespace MilkTea_app.BLL
             }
             return categoriesList;
         }
+        public List<Category> getCategory()
+        {
+            List<Category> categoriesList = new List<Category>();
+            try
+            {
+                IMongoCollection<Category> categories = database.GetCollection<Category>("Category");
+                var c = categories.Find(x => true).ToList();
+
+
+
+                // lọc ra các danh mục loại nước bằng linq
+                var a = from b in categories.AsQueryable<Category>()
+                        select b;
+
+
+                //var result = database.EvalAsync("GetCategory()").Result;
+                foreach (var temp in a)
+                {
+                    categoriesList.Add(temp);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return categoriesList;
+        }
 
         public List<Topping> getCategoryTopping()
         {
@@ -230,5 +258,6 @@ namespace MilkTea_app.BLL
             return _id;
            
         }
+        
     }
 }

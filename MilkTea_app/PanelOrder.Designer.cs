@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.gridControlOder = new DevExpress.XtraGrid.GridControl();
             this.gridViewOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.name = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.gridControlOder);
             this.panel1.Controls.Add(this.pnBtnProducts);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -59,13 +61,22 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 100);
+            this.panel2.TabIndex = 2;
+            // 
             // gridControlOder
             // 
-            this.gridControlOder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlOder.Location = new System.Drawing.Point(0, 0);
+            this.gridControlOder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControlOder.Location = new System.Drawing.Point(0, 94);
             this.gridControlOder.MainView = this.gridViewOrder;
             this.gridControlOder.Name = "gridControlOder";
-            this.gridControlOder.Size = new System.Drawing.Size(800, 302);
+            this.gridControlOder.Size = new System.Drawing.Size(800, 286);
             this.gridControlOder.TabIndex = 1;
             this.gridControlOder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrder});
@@ -116,11 +127,11 @@
             // 
             this.pnBtnProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnBtnProducts.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBtnProducts.Location = new System.Drawing.Point(0, 302);
+            this.pnBtnProducts.Location = new System.Drawing.Point(0, 380);
             this.pnBtnProducts.Name = "pnBtnProducts";
             this.pnBtnProducts.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.pnBtnProducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnBtnProducts.Size = new System.Drawing.Size(800, 250);
+            this.pnBtnProducts.Size = new System.Drawing.Size(800, 172);
             this.pnBtnProducts.TabIndex = 0;
             this.pnBtnProducts.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBtnProducts_Paint);
             // 
@@ -145,7 +156,7 @@
             // 
             // btnOrderDrinks
             // 
-            this.btnOrderDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnOrderDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnOrderDrinks.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnOrderDrinks.FlatAppearance.BorderSize = 0;
             this.btnOrderDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -197,5 +208,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn price;
         private System.Windows.Forms.TextBox txtSum;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
