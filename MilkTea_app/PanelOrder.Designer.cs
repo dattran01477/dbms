@@ -74,13 +74,14 @@
             // 
             // gridControlOder
             // 
-            this.gridControlOder.Dock = System.Windows.Forms.DockStyle.Bottom;
+
+            this.gridControlOder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlOder.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gridControlOder.Location = new System.Drawing.Point(0, 63);
+            this.gridControlOder.Location = new System.Drawing.Point(0, 0);
             this.gridControlOder.MainView = this.gridViewOrder;
             this.gridControlOder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControlOder.Name = "gridControlOder";
-            this.gridControlOder.Size = new System.Drawing.Size(600, 245);
+            this.gridControlOder.Size = new System.Drawing.Size(600, 244);
             this.gridControlOder.TabIndex = 1;
             this.gridControlOder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrder});
@@ -131,12 +132,13 @@
             // 
             this.pnBtnProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnBtnProducts.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnBtnProducts.Location = new System.Drawing.Point(0, 308);
+
+            this.pnBtnProducts.Location = new System.Drawing.Point(0, 244);
             this.pnBtnProducts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnBtnProducts.Name = "pnBtnProducts";
             this.pnBtnProducts.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
             this.pnBtnProducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pnBtnProducts.Size = new System.Drawing.Size(600, 140);
+            this.pnBtnProducts.Size = new System.Drawing.Size(600, 204);
             this.pnBtnProducts.TabIndex = 0;
             this.pnBtnProducts.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBtnProducts_Paint);
             // 
@@ -155,7 +157,8 @@
             // txtSum
             // 
             this.txtSum.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSum.Location = new System.Drawing.Point(50, 357);
+
+            this.txtSum.Location = new System.Drawing.Point(52, 344);
             this.txtSum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSum.Name = "txtSum";
             this.txtSum.Size = new System.Drawing.Size(103, 19);
@@ -171,6 +174,7 @@
             this.btnOrderDrinks.ForeColor = System.Drawing.Color.White;
             this.btnOrderDrinks.Image = global::MilkTea_app.Properties.Resources.tray__1_;
             this.btnOrderDrinks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.btnOrderDrinks.Location = new System.Drawing.Point(3, 395);
             this.btnOrderDrinks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrderDrinks.Name = "btnOrderDrinks";
