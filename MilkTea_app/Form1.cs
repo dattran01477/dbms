@@ -47,6 +47,7 @@ namespace MilkTea_app
         public AppMilkTea()
         {
             InitializeComponent();
+       
             pnLogo.BorderStyle = BorderStyle.None;
             panelOrder1.SetWidthHeight(panelOrder1.Width, panelOrder1.Height);
             AddCategory(data.getCategoryDrink(),panelCategoryDrinkOrder);
@@ -210,6 +211,9 @@ namespace MilkTea_app
            
         }
 
-     
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

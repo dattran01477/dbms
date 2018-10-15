@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppMilkTea));
             this.SideBar = new System.Windows.Forms.Panel();
             this.pnOrderTopping = new System.Windows.Forms.Panel();
             this.btnTopping = new System.Windows.Forms.Button();
@@ -42,8 +45,9 @@
             this.pnTopBar = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.pnDGV = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelOrder1 = new MilkTea_app.PanelOrder();
+            this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.SideBar.SuspendLayout();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,13 +200,15 @@
             // 
             // pnTopBar
             // 
+            this.pnTopBar.AutoScroll = true;
             this.pnTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
             this.pnTopBar.Controls.Add(this.button5);
+            this.bunifuTransition1.SetDecoration(this.pnTopBar, BunifuAnimatorNS.DecorationType.None);
             this.pnTopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTopBar.Location = new System.Drawing.Point(231, 0);
             this.pnTopBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnTopBar.Name = "pnTopBar";
-            this.pnTopBar.Size = new System.Drawing.Size(1144, 73);
+            this.pnTopBar.Size = new System.Drawing.Size(1144, 189);
             this.pnTopBar.TabIndex = 1;
             // 
             // button5
@@ -217,41 +223,50 @@
             this.button5.Size = new System.Drawing.Size(30, 30);
             this.button5.TabIndex = 0;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pnDGV
             // 
-            this.pnDGV.Controls.Add(this.bunifuCustomLabel1);
             this.pnDGV.Controls.Add(this.panelOrder1);
             this.pnDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnDGV.Location = new System.Drawing.Point(231, 73);
+            this.pnDGV.Location = new System.Drawing.Point(231, 189);
             this.pnDGV.Name = "pnDGV";
-            this.pnDGV.Size = new System.Drawing.Size(1144, 601);
+            this.pnDGV.Size = new System.Drawing.Size(1144, 485);
             this.pnDGV.TabIndex = 2;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(370, 37);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(93, 34);
-            this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "Order";
-            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelOrder1
             // 
+            this.panelOrder1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelOrder1.CollectorName = null;
-            this.panelOrder1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelOrder1.Height1 = 0;
-            this.panelOrder1.Location = new System.Drawing.Point(0, -78);
+            this.panelOrder1.Location = new System.Drawing.Point(0, 0);
             this.panelOrder1.Margin = new System.Windows.Forms.Padding(8, 3, 8, 3);
             this.panelOrder1.Name = "panelOrder1";
-            this.panelOrder1.Size = new System.Drawing.Size(1144, 679);
+            this.panelOrder1.Size = new System.Drawing.Size(1144, 485);
             this.panelOrder1.TabIndex = 0;
             this.panelOrder1.Width1 = 0;
+            // 
+            // bunifuTransition1
+            // 
+            this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlideAndRotate;
+            this.bunifuTransition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(50);
+            animation1.RotateCoeff = 0.3F;
+            animation1.RotateLimit = 0.2F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
             // 
             // AppMilkTea
             // 
@@ -262,6 +277,7 @@
             this.Controls.Add(this.pnDGV);
             this.Controls.Add(this.pnTopBar);
             this.Controls.Add(this.SideBar);
+            this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Font = new System.Drawing.Font("MS Reference Specialty", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -275,7 +291,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnTopBar.ResumeLayout(false);
             this.pnDGV.ResumeLayout(false);
-            this.pnDGV.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,8 +311,9 @@
         private System.Windows.Forms.Panel pnDGV;
         private System.Windows.Forms.Panel pnOrderTopping;
         private System.Windows.Forms.Button btnTopping;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private PanelOrder panelOrder1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
     }
 }
 

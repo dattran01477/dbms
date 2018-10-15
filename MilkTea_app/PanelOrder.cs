@@ -11,7 +11,10 @@ using MilkTea_app.BLL;
 using MilkTea_app.DTO;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using MongoDB.Bson.Serialization;
 using DevExpress.Utils;
+using MongoDB.Bson;
+using Bunifu.Framework.UI;
 
 namespace MilkTea_app
 {
@@ -19,6 +22,7 @@ namespace MilkTea_app
     {
         private DataStore  data= new DataStore();
         private List<Products> productsOrder = new List<Products>();
+        BsonArray bsonProductsOrder = new BsonArray();
 
         private int X,Y=0;
 
@@ -33,7 +37,11 @@ namespace MilkTea_app
 
         public PanelOrder()
         {
-            InitializeComponent();                
+            InitializeComponent();
+            txtDisCount.Text = "0";
+           
+
+           
         }
        public void SetWidthHeight(int width,int height)
         {
@@ -50,14 +58,18 @@ namespace MilkTea_app
             List<Products> products = new List<Products>();
             products = data.getAllProduct(collectorName);
             AddButton(products);
+
         }
 
         
 
         private void AddButton(List<Products> products)
         { 
-            SimpleButton btn;
+            Button btn;
+            BunifuElipse el = new BunifuElipse();
             Random rnd = new Random();
+
+            Font font = new Font("Century Gothic", 10,FontStyle.Bold);
             foreach(var a in products)
             {
                 if (X + 180 >= Width1)
@@ -65,15 +77,22 @@ namespace MilkTea_app
                     Y = Y + 80;
                     X = 0;
                 }
-                btn = new SimpleButton();
-                btn.ButtonStyle = BorderStyles.Default ;
+               
+                btn = new Button();
+                el.TargetControl = btn;
+               
                 btn.Size = new Size(180, 70);
-                btn.Text = a.name;
-                btn.Appearance.Font = new Font("arial", 10);
-                btn.Appearance.TextOptions.WordWrap = WordWrap.Wrap;
+                btn.Text = a.name;          
                 Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
                 btn.Location = new Point(X+40, Y+20);
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.Font = font;
+                btn.Anchor = (AnchorStyles.Bottom | AnchorStyles.Right| AnchorStyles.Left);
+                btn.TextAlign = ContentAlignment.MiddleCenter;
                 btn.BackColor = randomColor;
+                btn.ForeColor = Color.White;
+                el.ElipseRadius = 20;
                 btn.Click += Btn_Click;
                 X = X + 190;
                 pnBtnProducts.Controls.Add(btn);
@@ -86,11 +105,9 @@ namespace MilkTea_app
 
             gridControlOder.DataSource = null;
             gridViewOrder.Columns.Clear();
-
-
             this.gridViewOrder.AddNewRow();
-            SimpleButton btn = sender as SimpleButton;
-            productsOrder.Add( data.getInfoProduct(btn.Text));
+            Button btn = sender as Button;
+            productsOrder.Add(data.getInfoProduct(btn.Text));
 
             DataTable temp = new DataTable();
             temp.Columns.Add("name");
@@ -101,18 +118,33 @@ namespace MilkTea_app
             temp.Rows.Add(a.name, a.price, 1);
             gridControlOder.DataSource = temp;
 
-            txtSum.Text = SumPrice(productsOrder).ToString();
+            txtSum.Text = SumPrice(productsOrder,0).ToString();
+
            
+            
+                bsonProductsOrder.Add(productsOrder.LastOrDefault().ToBsonDocument());
+           
+
+
         }
         private double SumPrice(List<Products> products,int chiecKhau)
         {
             double sum = 0;
+         
+                
             foreach (var a in productsOrder)
             {
                 sum += a.price;
             }
-            return sum * chiecKhau / 100;
+            if (chiecKhau == 0)
+            {
+                return sum;
+            }
+
+
+           return sum * chiecKhau / 100;            
         }
+   
         private double SumPrice(List<Products> products)
         {
             double sum = 0;
@@ -132,6 +164,13 @@ namespace MilkTea_app
         private void pnBtnProducts_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnOrderDrinks_Click(object sender, EventArgs e)
+        {
+            data.addOrder(bsonProductsOrder, Double.Parse(txtSum.Text), Int16.Parse(txtDisCount.Text), "thanhdat");
+            bsonProductsOrder.Clear();
+            productsOrder.Clear();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
