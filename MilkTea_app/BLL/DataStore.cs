@@ -37,22 +37,7 @@ namespace MilkTea_app.BLL
             {
                 client = new MongoClient();
                 database = client.GetDatabase("QuanLyTraSua");
-<<<<<<< HEAD
-                
-=======
 
-
-                //var resul=database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "getCategory()" } });
-                //Cursor stats = database.RunCommand<Cursor>(new Cursor{ { "eval", "getCategory()" } });
-                //stats.foreach (MessageBox.Show("a")) ;
-               // MessageBox.Show(stats.ToString());
-
-                //MessageBox.Show();
-                //foreach (var a in resul)
-                //{
-                //    MessageBox.Show(a["retval"].AsString);
-                //}
->>>>>>> phuc
             }
             catch (Exception e)
             {
@@ -315,7 +300,7 @@ namespace MilkTea_app.BLL
             return _id;
            
         }
-<<<<<<< HEAD
+
         public void get()
         {
             var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "GetCategoryDrink()" } });
@@ -328,7 +313,7 @@ namespace MilkTea_app.BLL
            
         }
         
-=======
+
         public void postProducts(string name, string price,string categoryId)
         {
             try
@@ -422,6 +407,6 @@ namespace MilkTea_app.BLL
             }
         }
 
->>>>>>> phuc
+
     }
 }
