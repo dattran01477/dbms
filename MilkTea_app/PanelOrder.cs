@@ -13,8 +13,10 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using MongoDB.Bson.Serialization;
 using DevExpress.Utils;
+
 using MongoDB.Bson;
 using Bunifu.Framework.UI;
+
 
 namespace MilkTea_app
 {
@@ -168,9 +170,40 @@ namespace MilkTea_app
 
         private void btnOrderDrinks_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             data.addOrder(bsonProductsOrder, Double.Parse(txtSum.Text), Int16.Parse(txtDisCount.Text), "thanhdat");
             bsonProductsOrder.Clear();
             productsOrder.Clear();
+=======
+            GridView view = gridControlOder.MainView as GridView;
+            
+            for (int i = 0; i < view.RowCount; i++)
+            {
+                int rowHandle = view.GetVisibleRowHandle(i);
+                if (view.IsGroupRow(rowHandle))
+                {
+                    string text = view.GetGroupRowDisplayText(rowHandle);
+                    MessageBox.Show(text);
+                }
+                if (view.IsDataRow(rowHandle))
+                {
+                    string datmon = "";
+                    int j = 0;
+                    for (int c = 0; c < view.VisibleColumns.Count; c++)
+                    {
+                        object v = view.GetRowCellValue(rowHandle, view.VisibleColumns[c]);
+                        datmon = datmon + v.ToString() + ",";
+                        if(j==2)
+                        {
+                            MessageBox.Show(datmon);
+                            j = 0;
+                            datmon = "";
+                        }
+                        j++;
+                    }
+                }
+            }
+>>>>>>> phuc
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

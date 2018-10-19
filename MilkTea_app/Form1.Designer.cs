@@ -46,8 +46,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.pnDGV = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panelOrder1 = new MilkTea_app.PanelOrder();
             this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.panelOrder1 = new MilkTea_app.PanelOrder();
             this.SideBar.SuspendLayout();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +66,7 @@
             this.SideBar.Controls.Add(this.pnLogo);
             this.SideBar.Controls.Add(this.btnOrderFood);
             this.SideBar.Controls.Add(this.btnOrderDrinks);
+            this.bunifuTransition1.SetDecoration(this.SideBar, BunifuAnimatorNS.DecorationType.None);
             this.SideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.SideBar.Location = new System.Drawing.Point(0, 0);
             this.SideBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -75,6 +76,7 @@
             // 
             // pnOrderTopping
             // 
+            this.bunifuTransition1.SetDecoration(this.pnOrderTopping, BunifuAnimatorNS.DecorationType.None);
             this.pnOrderTopping.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnOrderTopping.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
             this.pnOrderTopping.Location = new System.Drawing.Point(29, 426);
@@ -84,6 +86,7 @@
             // 
             // btnTopping
             // 
+            this.bunifuTransition1.SetDecoration(this.btnTopping, BunifuAnimatorNS.DecorationType.None);
             this.btnTopping.FlatAppearance.BorderSize = 0;
             this.btnTopping.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTopping.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
@@ -104,6 +107,7 @@
             // 
             this.label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(178)))), ((int)(((byte)(183)))));
             this.label.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.label, BunifuAnimatorNS.DecorationType.None);
             this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(178)))), ((int)(((byte)(183)))));
             this.label.Location = new System.Drawing.Point(219, 212);
             this.label.Name = "label";
@@ -112,6 +116,7 @@
             // 
             // panelCategoryFoodOrder
             // 
+            this.bunifuTransition1.SetDecoration(this.panelCategoryFoodOrder, BunifuAnimatorNS.DecorationType.None);
             this.panelCategoryFoodOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCategoryFoodOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
             this.panelCategoryFoodOrder.Location = new System.Drawing.Point(25, 352);
@@ -121,6 +126,7 @@
             // 
             // panelCategoryDrinkOrder
             // 
+            this.bunifuTransition1.SetDecoration(this.panelCategoryDrinkOrder, BunifuAnimatorNS.DecorationType.None);
             this.panelCategoryDrinkOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCategoryDrinkOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
             this.panelCategoryDrinkOrder.Location = new System.Drawing.Point(26, 275);
@@ -134,6 +140,7 @@
             this.pnLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnLogo.Controls.Add(this.label1);
             this.pnLogo.Controls.Add(this.pictureBox1);
+            this.bunifuTransition1.SetDecoration(this.pnLogo, BunifuAnimatorNS.DecorationType.None);
             this.pnLogo.Location = new System.Drawing.Point(0, 0);
             this.pnLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnLogo.Name = "pnLogo";
@@ -143,6 +150,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(33, 161);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -153,6 +161,7 @@
             // 
             // pictureBox1
             // 
+            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.pictureBox1.Image = global::MilkTea_app.Properties.Resources.logo21;
             this.pictureBox1.Location = new System.Drawing.Point(3, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -164,6 +173,7 @@
             // 
             // btnOrderFood
             // 
+            this.bunifuTransition1.SetDecoration(this.btnOrderFood, BunifuAnimatorNS.DecorationType.None);
             this.btnOrderFood.FlatAppearance.BorderSize = 0;
             this.btnOrderFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderFood.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
@@ -182,6 +192,7 @@
             // 
             // btnOrderDrinks
             // 
+            this.bunifuTransition1.SetDecoration(this.btnOrderDrinks, BunifuAnimatorNS.DecorationType.None);
             this.btnOrderDrinks.FlatAppearance.BorderSize = 0;
             this.btnOrderDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrderDrinks.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,6 +227,7 @@
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.BackgroundImage = global::MilkTea_app.Properties.Resources.cancel_music;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuTransition1.SetDecoration(this.button5, BunifuAnimatorNS.DecorationType.None);
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(1111, 3);
@@ -228,24 +240,12 @@
             // pnDGV
             // 
             this.pnDGV.Controls.Add(this.panelOrder1);
+            this.bunifuTransition1.SetDecoration(this.pnDGV, BunifuAnimatorNS.DecorationType.None);
             this.pnDGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnDGV.Location = new System.Drawing.Point(231, 189);
             this.pnDGV.Name = "pnDGV";
             this.pnDGV.Size = new System.Drawing.Size(1144, 485);
             this.pnDGV.TabIndex = 2;
-            // 
-            // panelOrder1
-            // 
-            this.panelOrder1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelOrder1.CollectorName = null;
-            this.panelOrder1.Height1 = 0;
-            this.panelOrder1.Location = new System.Drawing.Point(0, 0);
-            this.panelOrder1.Margin = new System.Windows.Forms.Padding(8, 3, 8, 3);
-            this.panelOrder1.Name = "panelOrder1";
-            this.panelOrder1.Size = new System.Drawing.Size(1144, 485);
-            this.panelOrder1.TabIndex = 0;
-            this.panelOrder1.Width1 = 0;
             // 
             // bunifuTransition1
             // 
@@ -267,6 +267,20 @@
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
             this.bunifuTransition1.DefaultAnimation = animation1;
+            // 
+            // panelOrder1
+            // 
+            this.panelOrder1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelOrder1.CollectorName = null;
+            this.bunifuTransition1.SetDecoration(this.panelOrder1, BunifuAnimatorNS.DecorationType.None);
+            this.panelOrder1.Height1 = 0;
+            this.panelOrder1.Location = new System.Drawing.Point(0, 0);
+            this.panelOrder1.Margin = new System.Windows.Forms.Padding(11, 3, 11, 3);
+            this.panelOrder1.Name = "panelOrder1";
+            this.panelOrder1.Size = new System.Drawing.Size(1573, 515);
+            this.panelOrder1.TabIndex = 0;
+            this.panelOrder1.Width1 = 0;
             // 
             // AppMilkTea
             // 
@@ -311,9 +325,9 @@
         private System.Windows.Forms.Panel pnDGV;
         private System.Windows.Forms.Panel pnOrderTopping;
         private System.Windows.Forms.Button btnTopping;
-        private PanelOrder panelOrder1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
+        private PanelOrder panelOrder1;
     }
 }
 

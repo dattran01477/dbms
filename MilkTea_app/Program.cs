@@ -16,7 +16,7 @@ namespace MilkTea_app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppMilkTea());
+            Application.Run(new Form2());
         }
     }
 }

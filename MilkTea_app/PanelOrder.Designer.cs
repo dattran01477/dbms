@@ -48,7 +48,8 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlOder)).BeginInit();
+            System.ComponentModel.ISupportInitialize gridControlOder1 = (System.ComponentModel.ISupportInitialize)(this.gridControlOder);
+            gridControlOder1.BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).BeginInit();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
@@ -61,18 +62,32 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 552);
+            this.panel1.Size = new System.Drawing.Size(600, 448);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+
             // gridControlOder
             // 
             this.gridControlOder.Dock = System.Windows.Forms.DockStyle.Fill;
+
+       
+            // 
+            // gridControlOder
+            // 
+
+            this.gridControlOder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlOder.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
             this.gridControlOder.Location = new System.Drawing.Point(0, 0);
             this.gridControlOder.MainView = this.gridViewOrder;
+            this.gridControlOder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControlOder.Name = "gridControlOder";
+
             this.gridControlOder.Size = new System.Drawing.Size(800, 341);
+
             this.gridControlOder.TabIndex = 1;
             this.gridControlOder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewOrder});
@@ -124,10 +139,12 @@
             this.pnBtnProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnBtnProducts.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnBtnProducts.Location = new System.Drawing.Point(0, 341);
+
             this.pnBtnProducts.Name = "pnBtnProducts";
-            this.pnBtnProducts.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.pnBtnProducts.Padding = new System.Windows.Forms.Padding(38, 0, 0, 0);
             this.pnBtnProducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.pnBtnProducts.Size = new System.Drawing.Size(800, 211);
+
             this.pnBtnProducts.TabIndex = 0;
             this.pnBtnProducts.Paint += new System.Windows.Forms.PaintEventHandler(this.pnBtnProducts_Paint);
             // 
@@ -143,9 +160,10 @@
             this.pnMenu.Controls.Add(this.txtSum);
             this.pnMenu.Controls.Add(this.btnOrderDrinks);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnMenu.Location = new System.Drawing.Point(799, 0);
+            this.pnMenu.Location = new System.Drawing.Point(599, 0);
+            this.pnMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(208, 552);
+            this.pnMenu.Size = new System.Drawing.Size(156, 448);
             this.pnMenu.TabIndex = 1;
             // 
             // button1
@@ -232,11 +250,13 @@
             // 
             // txtSum
             // 
+
             this.txtSum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSum.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.txtSum.Location = new System.Drawing.Point(6, 335);
             this.txtSum.Name = "txtSum";
             this.txtSum.Size = new System.Drawing.Size(131, 36);
+
             this.txtSum.TabIndex = 2;
             this.txtSum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -251,10 +271,11 @@
             this.btnOrderDrinks.ForeColor = System.Drawing.Color.White;
             this.btnOrderDrinks.Image = global::MilkTea_app.Properties.Resources.tray__1_;
             this.btnOrderDrinks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             this.btnOrderDrinks.Location = new System.Drawing.Point(3, 487);
             this.btnOrderDrinks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnOrderDrinks.Name = "btnOrderDrinks";
-            this.btnOrderDrinks.Size = new System.Drawing.Size(200, 62);
+            this.btnOrderDrinks.Size = new System.Drawing.Size(150, 50);
             this.btnOrderDrinks.TabIndex = 1;
             this.btnOrderDrinks.Text = "Thanh Toán";
             this.btnOrderDrinks.UseCompatibleTextRendering = true;
@@ -273,12 +294,13 @@
             // 
             // PanelOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PanelOrder";
-            this.Size = new System.Drawing.Size(1007, 552);
+            this.Size = new System.Drawing.Size(755, 448);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlOder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).EndInit();

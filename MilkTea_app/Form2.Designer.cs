@@ -36,25 +36,27 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.managerProDuct1);
-            this.panel1.Location = new System.Drawing.Point(93, 22);
+            this.panel1.Location = new System.Drawing.Point(15, 22);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1039, 593);
+            this.panel1.Size = new System.Drawing.Size(1196, 642);
             this.panel1.TabIndex = 0;
             // 
             // managerProDuct1
             // 
-            this.managerProDuct1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.managerProDuct1.Location = new System.Drawing.Point(0, 0);
+            this.managerProDuct1.Location = new System.Drawing.Point(29, 2);
+            this.managerProDuct1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.managerProDuct1.Name = "managerProDuct1";
-            this.managerProDuct1.Size = new System.Drawing.Size(1039, 593);
+            this.managerProDuct1.Size = new System.Drawing.Size(1129, 562);
             this.managerProDuct1.TabIndex = 0;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 678);
+            this.ClientSize = new System.Drawing.Size(1211, 678);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.panel1.ResumeLayout(false);

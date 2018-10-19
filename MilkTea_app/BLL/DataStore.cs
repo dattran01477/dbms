@@ -21,9 +21,9 @@ namespace MilkTea_app.BLL
         {
             try
             {
-                client = new MongoClient(hostName+":27017"); 
-                
+                client = new MongoClient(hostName+":27017");
                 database = client.GetDatabase(dataName);
+
             }
             catch (Exception e)
             {
@@ -37,7 +37,22 @@ namespace MilkTea_app.BLL
             {
                 client = new MongoClient();
                 database = client.GetDatabase("QuanLyTraSua");
+<<<<<<< HEAD
                 
+=======
+
+
+                //var resul=database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "getCategory()" } });
+                //Cursor stats = database.RunCommand<Cursor>(new Cursor{ { "eval", "getCategory()" } });
+                //stats.foreach (MessageBox.Show("a")) ;
+               // MessageBox.Show(stats.ToString());
+
+                //MessageBox.Show();
+                //foreach (var a in resul)
+                //{
+                //    MessageBox.Show(a["retval"].AsString);
+                //}
+>>>>>>> phuc
             }
             catch (Exception e)
             {
@@ -300,6 +315,7 @@ namespace MilkTea_app.BLL
             return _id;
            
         }
+<<<<<<< HEAD
         public void get()
         {
             var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "GetCategoryDrink()" } });
@@ -312,5 +328,100 @@ namespace MilkTea_app.BLL
            
         }
         
+=======
+        public void postProducts(string name, string price,string categoryId)
+        {
+            try
+                {
+                string str = "addPoducts('" + name + "'," + price + "," + "ObjectId('" + categoryId + "'));";
+                MessageBox.Show(str);
+                database.RunCommand<BsonDocument>(new BsonDocument { { "eval",str } });
+                MessageBox.Show("Đã thêm thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
+            }
+        }
+        public void updateProducts(string name, string price, string categoryId)
+        {
+            try
+            {
+                string str = "updateProducts('" + name + "'," + price + "," + "ObjectId('" + categoryId + "'));";
+                MessageBox.Show(str);
+                database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                MessageBox.Show("Đã thêm thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không cập nhật được dữ liệu!");
+            }
+        }
+
+        public void deleteProducts(string name)
+        {
+            try
+            {
+                var result=MessageBox.Show("Bạn có chắc chắn muốn xóa ?","Delete Products",MessageBoxButtons.YesNo);
+                if(result==DialogResult.Yes)
+                {
+                    string str = "deleteProducts('" + name + "');";
+                    MessageBox.Show(str);
+                    database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không xóa được dữ liệu!");
+            }
+        }
+
+        public void postCategory(string name, string type)
+        {
+            try
+            {
+                string str = "insertCategory('" + name + "'," +type + "));";
+                MessageBox.Show(str);
+                database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                MessageBox.Show("Đã thêm thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
+            }
+        }
+        public void updateCategory(string name, string type)
+        {
+            try
+            {
+                string str = "updateCategory('" + name + "'," + type + "));";
+                MessageBox.Show(str);
+                database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                MessageBox.Show("Đã thêm thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không cập nhật được dữ liệu!");
+            }
+        }
+        public void deleteCategory(string name)
+        {
+            try
+            {
+                var result = MessageBox.Show("Bạn có chắc chắn muốn xóa ?", "Delete Category", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    string str = "deleteCategory('" + name + "');";
+                    MessageBox.Show(str);
+                    database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không xóa được dữ liệu!");
+            }
+        }
+
+>>>>>>> phuc
     }
 }
