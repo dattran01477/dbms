@@ -42,7 +42,8 @@
             this.btnOrderDrinks = new System.Windows.Forms.Button();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlOder)).BeginInit();
+            System.ComponentModel.ISupportInitialize gridControlOder1 = (System.ComponentModel.ISupportInitialize)(this.gridControlOder);
+            gridControlOder1.BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).BeginInit();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
