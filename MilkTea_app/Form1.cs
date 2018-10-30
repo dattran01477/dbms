@@ -10,204 +10,113 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using MilkTea_app.BLL;
 using MilkTea_app.DTO;
+using Bunifu.Framework.UI;
+using System.Windows.Media;
 
 namespace MilkTea_app
 {
     public partial class AppMilkTea : Form
     {
-        bool isOrderFood = false;
-        bool isOrderDrink = false;
-        bool isOrderTopping = false;
+        bool isOerder = false;
+        bool isQuanLy = false;
+        bool isThongKe = false;
 
-        DataStore data = new DataStore();
-        List<object> component = new List<object>();
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-       (
-           int nLeftRect,     // x-coordinate of upper-left corner
-           int nTopRect,      // y-coordinate of upper-left corner
-           int nRightRect,    // x-coordinate of lower-right corner
-           int nBottomRect,   // y-coordinate of lower-right corner
-           int nWidthEllipse, // height of ellipse
-           int nHeightEllipse // width of ellipse
-       );
-        /*chưa cần*/
-        private void AddOject()
-        {
-            component.Add(btnOrderDrinks);
-            component.Add(panelCategoryDrinkOrder);
-            component.Add(btnOrderFood);
-            component.Add(panelCategoryFoodOrder);
-        }
-        private void AddScroll(Button btn)
-        {
-            label.Location = new Point(label.Location.X, btn.Location.Y);
-            
-        }
+        Order or = new Order();
+        QuanLy ql = new QuanLy();
+        Stack<BunifuThinButton2> sbtn = new Stack<BunifuThinButton2>();
+        Stack<Object> pn = new Stack<object>();
+
+        Object pnHienTai;
+
         public AppMilkTea()
         {
             InitializeComponent();
-       
-            pnLogo.BorderStyle = BorderStyle.None;
-            panelOrder1.SetWidthHeight(panelOrder1.Width, panelOrder1.Height);
-            AddCategory(data.getCategoryDrink(),panelCategoryDrinkOrder);
-            AddCategory(data.getCategoryFood(),panelCategoryFoodOrder);
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-        }
-
-        private void MoveButtonOverFlow(bool isOrderType,Button btnOrderMove,Panel pnThisButtonOrder,Panel pnOrderMove)
-        {
-            if (isOrderType)
-            {
-                btnOrderMove.Location = new Point(btnOrderMove.Location.X, btnOrderMove.Location.Y + pnThisButtonOrder.Height);
-            }
-            else
-            {
-                btnOrderMove.Location = new Point(btnOrderMove.Location.X, btnOrderMove.Location.Y - pnThisButtonOrder.Height);
-   
-            }
-
-            pnOrderMove.Location = new Point(btnOrderMove.Location.X + 25, btnOrderMove.Location.Y + 70);
-
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Button btnTemp = sender as Button;
-            AddScroll(btnTemp);
-            if (isOrderDrink==false)
-            {
-                isOrderDrink = true;
-                panelCategoryDrinkOrder.AutoSize = true;
-               
-                MoveButtonOverFlow(isOrderDrink, btnOrderFood, panelCategoryDrinkOrder, panelCategoryFoodOrder);
-                MoveButtonOverFlow(isOrderDrink, btnTopping, panelCategoryDrinkOrder, pnOrderTopping);
-
-
-
-            }
-            else
-            {
-                isOrderDrink = false;
-                MoveButtonOverFlow(isOrderDrink, btnOrderFood, panelCategoryDrinkOrder, panelCategoryFoodOrder);
-                MoveButtonOverFlow(isOrderDrink, btnTopping, panelCategoryDrinkOrder, pnOrderTopping);
-                panelCategoryDrinkOrder.AutoSize = false;
-
-               
-              
-            }
-                
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Button btnTemp = sender as Button;
-            AddScroll(btnTemp);
-            if (isOrderFood==false)
-            {
-                isOrderFood = true;
-                panelCategoryFoodOrder.AutoSize = true;
-          
-                MoveButtonOverFlow(isOrderFood, btnTopping, panelCategoryFoodOrder, pnOrderTopping);
-            }
-            else
-            {
-                isOrderFood = false;
-                MoveButtonOverFlow(isOrderFood, btnTopping, panelCategoryFoodOrder, pnOrderTopping);
-                panelCategoryFoodOrder.AutoSize = false;
-
-           
-            }
-        }
-        private void btnTopping_Click(object sender, EventArgs e)
-        {
-            Button btnTemp = sender as Button;
-            AddScroll(btnTemp);
-            if (isOrderTopping == false)
-            {
-                isOrderTopping = true;
-                pnOrderTopping.AutoSize = true;
-                panelOrder1.LoadData(btnTopping.Text);
-
-               
-            }
-            else
-            {
-                isOrderTopping = false;
-                pnOrderTopping.AutoSize = false;
-
-
-            }
-
-        }
-        /*add category*/
-
-        private void AddCategory  (List<Category> category,Panel pn)
-        {
-            int xBtn = 0, yBtn = 0;
-            Button btn;
-
-            foreach(var temp  in category)
-            {
+            or.Dock = DockStyle.Fill;
+            //  pnDGV.Controls.Clear();
+            ql.AutoScaleMode = AutoScaleMode.None;
+            or.AutoScaleMode = AutoScaleMode.None;
+            pnDGV.Controls.Add(or);
          
-                btn = new Button();
-                 btn.Size = new Size(180, 40);
-                btn.Location = new Point(xBtn, yBtn);
-                btn.FlatAppearance.BorderSize = 0;
-                btn.Text = temp.name;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.Click += Btn_Click;
-                btn.TextAlign = ContentAlignment.MiddleCenter;
-                yBtn = yBtn + 50;
-                pn.Controls.Add(btn);
+        
 
-            }
+          
+
 
         }
-        private void AddCategory(List<Topping> category,Panel pn)
-        {
-            int xBtn = 0, yBtn = 0;
-            Button btn;
 
-            foreach (var temp in category)
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            BunifuThinButton2 btn = sender as BunifuThinButton2;
+            isOerder = true;
+            Show(btn);
+        }
+
+        private void btnQuanLy_Click(object sender, EventArgs e)
+        {
+            BunifuThinButton2 btn = sender as BunifuThinButton2;
+            isQuanLy = true;
+            Show(btn);
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            BunifuThinButton2 btn = sender as BunifuThinButton2;
+            isThongKe = true;
+            Show(btn);
+        }
+        private void ChangeBtn(BunifuThinButton2 btn)
+        {
+            if(sbtn.Count==0)
             {
-
-                btn = new Button();
-                btn.Size = new Size(180, 40);
-                btn.Location = new Point(xBtn, yBtn);
-                btn.FlatAppearance.BorderSize = 0;
-                btn.Text = temp.name;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.Click += Btn_Click;
-                btn.TextAlign = ContentAlignment.MiddleCenter;
-                yBtn = yBtn + 50;
-                pn.Controls.Add(btn);
-
+                System.Drawing.Color _color = System.Drawing.ColorTranslator.FromHtml("#FFD039");
+                btn.IdleFillColor = _color;
+                sbtn.Push(btn);
             }
-
+            else
+            {
+                //tra lại mau
+               while(sbtn.Count!=0)
+                {
+                    BunifuThinButton2 btntemp = sbtn.Pop();
+                    System.Drawing.Color _color = System.Drawing.ColorTranslator.FromHtml("#323741");
+                    btntemp.IdleFillColor = _color;
+                  
+                }
+                System.Drawing.Color color = System.Drawing.ColorTranslator.FromHtml("#FFD039");
+                btn.IdleFillColor = color;
+                sbtn.Push(btn);
+            }
+           
         }
-
-
-
-        private void Btn_Click(object sender, EventArgs e)
+        private void Show(BunifuThinButton2 btn)
         {
-            Button btn= sender as Button;
-            panelOrder1.LoadData(btn.Text);
-
-        }
-
-        private void AppMilkTea_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelOrder1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelOrder1_Resize(object sender, EventArgs e)
-        {
+            
+            ChangeBtn(btn);
+            if(isQuanLy==true)
+            {
+                ql.Dock = DockStyle.Fill;
+              //  pnDGV.Controls.Clear();
+                animator1.Hide(or);
+                pnDGV.Controls.Add(ql);
+                ql.Hide();
+                animator2.ShowSync(ql);
+                isOerder = false;
+                isThongKe = false;
+                isQuanLy = false;
+            }
+            if(isOerder==true)
+            {
+               
+                or.Dock = DockStyle.Fill;
+                //   pnDGV.Controls.Clear();
+                animator1.Hide(ql);
+                pnDGV.Controls.Add(or);
+                ql.Hide();
+                animator2.ShowSync(or);
+                isOerder = false;
+                isThongKe = false;
+                isQuanLy = false;
+            }
            
         }
 

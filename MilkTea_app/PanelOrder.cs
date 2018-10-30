@@ -22,6 +22,10 @@ namespace MilkTea_app
 {
     public partial class PanelOrder : UserControl
     {
+        int margin;
+        int size;
+
+
         private DataStore  data= new DataStore();
         private List<Products> productsOrder = new List<Products>();
         BsonArray bsonProductsOrder = new BsonArray();
@@ -39,11 +43,18 @@ namespace MilkTea_app
 
         public PanelOrder()
         {
+
+
             InitializeComponent();
             txtDisCount.Text = "0";
            
+            margin = ((flowLayoutPnBtn.Width - 4 * 180) / (4 + 2));
+            size = flowLayoutPnBtn.Width / 4;
 
-           
+
+
+
+
         }
        public void SetWidthHeight(int width,int height)
         {
@@ -55,7 +66,7 @@ namespace MilkTea_app
         {
             X = 0;
             Y = 0;
-            pnBtnProducts.Controls.Clear();
+            flowLayoutPnBtn.Controls.Clear();
             collectorName = collName;
             List<Products> products = new List<Products>();
             products = data.getAllProduct(collectorName);
@@ -71,22 +82,23 @@ namespace MilkTea_app
             BunifuElipse el = new BunifuElipse();
             Random rnd = new Random();
 
-            Font font = new Font("Century Gothic", 10,FontStyle.Bold);
+            Font font = new Font("Century Gothic", 10);
             foreach(var a in products)
             {
-                if (X + 180 >= Width1)
-                {
-                    Y = Y + 80;
-                    X = 0;
-                }
+                //if (X+180 >= flowLayoutPnBtn.Width)
+                //{
+                   
+                //       Y = Y + 80;
+                //        X = 0;
+                   
+                //}
                
                 btn = new Button();
                 el.TargetControl = btn;
-               
-                btn.Size = new Size(180, 70);
+                btn.Size = new Size(size, 70);
                 btn.Text = a.name;          
-                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                btn.Location = new Point(X+40, Y+20);
+                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(152), rnd.Next(256));
+                X = X + margin;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
                 btn.Font = font;
@@ -96,8 +108,8 @@ namespace MilkTea_app
                 btn.ForeColor = Color.White;
                 el.ElipseRadius = 20;
                 btn.Click += Btn_Click;
-                X = X + 190;
-                pnBtnProducts.Controls.Add(btn);
+           
+                flowLayoutPnBtn.Controls.Add(btn);
             }
         }
 
@@ -120,11 +132,8 @@ namespace MilkTea_app
             temp.Rows.Add(a.name, a.price, 1);
             gridControlOder.DataSource = temp;
 
-            txtSum.Text = SumPrice(productsOrder,0).ToString();
-
+            txtSum.Text = SumPrice(productsOrder,int.Parse(txtDisCount.Text)).ToString();
            
-            
-                bsonProductsOrder.Add(productsOrder.LastOrDefault().ToBsonDocument());
            
 
 
@@ -142,20 +151,14 @@ namespace MilkTea_app
             {
                 return sum;
             }
+            else
+            {
+                sum = sum - sum * ((double)chiecKhau / 100);
+            }
 
-
-           return sum * chiecKhau / 100;            
+            return sum;        
         }
    
-        private double SumPrice(List<Products> products)
-        {
-            double sum = 0;
-            foreach (var a in productsOrder)
-            {
-                sum += a.price;
-            }
-            return sum;
-        }
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -170,8 +173,61 @@ namespace MilkTea_app
 
         private void btnOrderDrinks_Click(object sender, EventArgs e)
         {
+            foreach(var a in productsOrder)
+            bsonProductsOrder.Add(a.ToBsonDocument());
+            try
+            {
+                data.addOrder(bsonProductsOrder, int.Parse(txtSum.Text), int.Parse(txtDisCount.Text), "23");
+                bsonProductsOrder.Clear();
+                productsOrder.Clear();
+                
 
+            }
+            catch
+            {
 
+            }
+            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDisCount_TextChanged(object sender, EventArgs e)
+        {
+          try
+            {
+                txtSum.Text = SumPrice(productsOrder, int.Parse(txtDisCount.Text)).ToString();
+            }
+            catch
+            {
+                txtSum.Text = SumPrice(productsOrder,0).ToString();
+            }
+          
+        }
+
+        private void gridControlOder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnBtnProducts_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string column1Name = gridViewOrder.Columns[1].Name;
+            if (gridViewOrder.RowCount>0)
+            {
+              
+                gridViewOrder.DeleteRow(gridViewOrder.FocusedRowHandle);
+               
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

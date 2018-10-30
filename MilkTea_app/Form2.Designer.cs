@@ -20,6 +20,8 @@
             base.Dispose(disposing);
         }
 
+        
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,45 +30,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.managerProDuct1 = new MilkTea_app.ManagerProDuct();
-            this.panel1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.manager1 = new MilkTea_app.Manager();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Controls.Add(this.managerProDuct1);
-            this.panel1.Location = new System.Drawing.Point(15, 22);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1196, 642);
-            this.panel1.TabIndex = 0;
+            this.panel2.Controls.Add(this.manager1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1375, 674);
+            this.panel2.TabIndex = 0;
             // 
-            // managerProDuct1
+            // manager1
             // 
-            this.managerProDuct1.Location = new System.Drawing.Point(29, 2);
-            this.managerProDuct1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.managerProDuct1.Name = "managerProDuct1";
-            this.managerProDuct1.Size = new System.Drawing.Size(1129, 562);
-            this.managerProDuct1.TabIndex = 0;
+            this.manager1.AutoSize = true;
+            this.manager1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manager1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manager1.Location = new System.Drawing.Point(0, 0);
+            this.manager1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.manager1.Name = "manager1";
+            this.manager1.Size = new System.Drawing.Size(1375, 674);
+            this.manager1.TabIndex = 0;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1211, 678);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(1375, 674);
+            this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("MS Reference Specialty", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form2";
-            this.Text = "Form2";
-            this.panel1.ResumeLayout(false);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Trà Sữa Di&Pi";
+            this.Load += new System.EventHandler(this.AppMilkTea_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private ManagerProDuct managerProDuct1;
+    
+    private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private Manager manager1;
     }
 }

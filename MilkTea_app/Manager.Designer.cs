@@ -52,9 +52,12 @@
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse10 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -69,10 +72,10 @@
             this.panel1.Controls.Add(this.btnCapnhat);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Location = new System.Drawing.Point(652, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(869, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 450);
+            this.panel1.Size = new System.Drawing.Size(291, 554);
             this.panel1.TabIndex = 0;
             // 
             // btnXoa
@@ -80,10 +83,11 @@
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Location = new System.Drawing.Point(58, 249);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(67, 304);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(117, 43);
+            this.btnXoa.Size = new System.Drawing.Size(156, 53);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -94,10 +98,11 @@
             this.btnCapnhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnCapnhat.FlatAppearance.BorderSize = 0;
             this.btnCapnhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapnhat.Location = new System.Drawing.Point(58, 171);
-            this.btnCapnhat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCapnhat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapnhat.Location = new System.Drawing.Point(67, 214);
+            this.btnCapnhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapnhat.Name = "btnCapnhat";
-            this.btnCapnhat.Size = new System.Drawing.Size(117, 43);
+            this.btnCapnhat.Size = new System.Drawing.Size(156, 53);
             this.btnCapnhat.TabIndex = 0;
             this.btnCapnhat.Text = "Cập Nhât";
             this.btnCapnhat.UseVisualStyleBackColor = false;
@@ -108,10 +113,11 @@
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(58, 100);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(67, 124);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(117, 43);
+            this.btnSua.Size = new System.Drawing.Size(156, 53);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -122,10 +128,11 @@
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Location = new System.Drawing.Point(58, 28);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(67, 34);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(117, 43);
+            this.btnThem.Size = new System.Drawing.Size(156, 53);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -159,15 +166,13 @@
             this.panel2.Controls.Add(this.dgvProduct);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(872, 455);
+            this.panel2.Size = new System.Drawing.Size(1163, 560);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel3.Controls.Add(this.btnLuu);
             this.panel3.Controls.Add(this.btnHuy);
@@ -177,10 +182,11 @@
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
             this.panel3.Controls.Add(this.bunifuCustomLabel2);
             this.panel3.Controls.Add(this.bunifuCustomLabel1);
-            this.panel3.Location = new System.Drawing.Point(306, 56);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(408, 49);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(310, 375);
+            this.panel3.Size = new System.Drawing.Size(413, 462);
             this.panel3.TabIndex = 1;
             // 
             // btnLuu
@@ -188,12 +194,12 @@
             this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
             this.btnLuu.FlatAppearance.BorderSize = 0;
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLuu.Location = new System.Drawing.Point(34, 240);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Location = new System.Drawing.Point(49, 382);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(87, 35);
+            this.btnLuu.Size = new System.Drawing.Size(116, 43);
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -205,12 +211,12 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHuy.Location = new System.Drawing.Point(183, 240);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuy.Location = new System.Drawing.Point(248, 382);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(87, 35);
+            this.btnHuy.Size = new System.Drawing.Size(116, 43);
             this.btnHuy.TabIndex = 0;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -218,75 +224,80 @@
             // 
             // cmbCategory
             // 
-            this.cmbCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCategory.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cmbCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(25, 128);
-            this.cmbCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCategory.Location = new System.Drawing.Point(83, 158);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(120, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(159, 30);
             this.cmbCategory.TabIndex = 4;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // txtMaxacthuc
             // 
+            this.txtMaxacthuc.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtMaxacthuc.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtMaxacthuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaxacthuc.Location = new System.Drawing.Point(25, 179);
-            this.txtMaxacthuc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaxacthuc.Location = new System.Drawing.Point(83, 220);
+            this.txtMaxacthuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaxacthuc.Multiline = true;
             this.txtMaxacthuc.Name = "txtMaxacthuc";
-            this.txtMaxacthuc.Size = new System.Drawing.Size(134, 18);
+            this.txtMaxacthuc.Size = new System.Drawing.Size(179, 39);
             this.txtMaxacthuc.TabIndex = 3;
             // 
             // txtTendanhmuc
             // 
+            this.txtTendanhmuc.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTendanhmuc.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtTendanhmuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTendanhmuc.Location = new System.Drawing.Point(25, 65);
-            this.txtTendanhmuc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTendanhmuc.Location = new System.Drawing.Point(83, 80);
+            this.txtTendanhmuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTendanhmuc.Multiline = true;
             this.txtTendanhmuc.Name = "txtTendanhmuc";
-            this.txtTendanhmuc.Size = new System.Drawing.Size(188, 26);
+            this.txtTendanhmuc.Size = new System.Drawing.Size(251, 39);
             this.txtTendanhmuc.TabIndex = 3;
             // 
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(22, 156);
-            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(79, 192);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(72, 13);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(129, 23);
             this.bunifuCustomLabel3.TabIndex = 1;
             this.bunifuCustomLabel3.Text = "Mã Xác Thực";
             // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(22, 105);
-            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(79, 129);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(27, 13);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(45, 23);
             this.bunifuCustomLabel2.TabIndex = 1;
             this.bunifuCustomLabel2.Text = "Loại";
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(22, 42);
-            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(79, 52);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(79, 13);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(138, 23);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Tên Danh Mục";
             // 
             // dgvProduct
             // 
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(2, 3);
-            this.dgvProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ten,
+            this.Loai});
+            this.dgvProduct.Location = new System.Drawing.Point(3, 4);
+            this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(278, 448);
+            this.dgvProduct.Size = new System.Drawing.Size(371, 551);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
@@ -305,11 +316,6 @@
             this.bunifuElipse7.ElipseRadius = 20;
             this.bunifuElipse7.TargetControl = this.txtMaxacthuc;
             // 
-            // bunifuElipse8
-            // 
-            this.bunifuElipse8.ElipseRadius = 20;
-            this.bunifuElipse8.TargetControl = this.cmbCategory;
-            // 
             // bunifuElipse9
             // 
             this.bunifuElipse9.ElipseRadius = 20;
@@ -320,15 +326,39 @@
             this.bunifuElipse10.ElipseRadius = 20;
             this.bunifuElipse10.TargetControl = this.btnLuu;
             // 
+            // Ten
+            // 
+            this.Ten.DataPropertyName = "Ten";
+            this.Ten.HeaderText = "Tên";
+            this.Ten.Name = "Ten";
+            // 
+            // Loai
+            // 
+            this.Loai.DataPropertyName = "Loai";
+            this.Loai.HeaderText = "Loại";
+            this.Loai.Name = "Loai";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // Manager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Manager";
-            this.Size = new System.Drawing.Size(872, 455);
+            this.Size = new System.Drawing.Size(1163, 560);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -362,9 +392,12 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse6;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
         private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }

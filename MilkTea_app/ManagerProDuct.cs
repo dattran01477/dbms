@@ -256,5 +256,68 @@ namespace MilkTea_app
             loadButton();
             loadDatacmb();
         }
+
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+            switch (statusManager)
+            {
+                case 0:
+                    {
+                        break;
+                    }
+                case 1:
+                    {
+                        foreach (CategoryId a in arrcategory)
+                        {
+                            if (a.categoyname == cmbCategory.SelectedItem.ToString())
+                            {
+                                data.postProducts(txtTensanpham.Text, txtGia.Text, a.categoryid);
+                                loadDatacmb();
+                                break;
+                            }
+
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        foreach (CategoryId a in arrcategory)
+                        {
+                            if (a.categoyname == cmbCategory.SelectedItem.ToString())
+                            {
+                                data.updateProducts(txtTensanpham.Text, txtGia.Text, a.categoryid);
+                                loadDatacmb();
+                                break;
+                            }
+
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+
+                        break;
+                    }
+                case 4:
+                    {
+
+                        break;
+                    }
+                default:
+                    {
+                        MessageBox.Show("Lỗi thao tác!");
+                        break;
+                    }
+            }
+            statusManager = 0;
+            loadButton();
+        }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+            statusManager = 0;
+            resetText();
+            loadButton();
+        }
     }
 }

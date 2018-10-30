@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerProDuct));
             this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btnHuy = new System.Windows.Forms.Button();
             this.bunifuElipse8 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.txtMaxacthuc = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -41,7 +41,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.txtGia = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -59,6 +58,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuElipse11 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse12 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.btnLuu = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnHuy = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,37 +69,19 @@
             // dgvProduct
             // 
             this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProduct.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(2, 3);
-            this.dgvProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvProduct.Location = new System.Drawing.Point(0, 2);
+            this.dgvProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowTemplate.Height = 24;
-            this.dgvProduct.Size = new System.Drawing.Size(278, 448);
+            this.dgvProduct.Size = new System.Drawing.Size(371, 551);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
             // bunifuElipse9
             // 
             this.bunifuElipse9.ElipseRadius = 20;
-            this.bunifuElipse9.TargetControl = this.btnHuy;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
-            this.btnHuy.FlatAppearance.BorderSize = 0;
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHuy.Location = new System.Drawing.Point(157, 337);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(87, 35);
-            this.btnHuy.TabIndex = 0;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // bunifuElipse8
             // 
@@ -112,13 +95,14 @@
             // 
             // txtMaxacthuc
             // 
+            this.txtMaxacthuc.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtMaxacthuc.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtMaxacthuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaxacthuc.Location = new System.Drawing.Point(24, 271);
-            this.txtMaxacthuc.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaxacthuc.Location = new System.Drawing.Point(32, 334);
+            this.txtMaxacthuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaxacthuc.Multiline = true;
             this.txtMaxacthuc.Name = "txtMaxacthuc";
-            this.txtMaxacthuc.Size = new System.Drawing.Size(134, 18);
+            this.txtMaxacthuc.Size = new System.Drawing.Size(179, 31);
             this.txtMaxacthuc.TabIndex = 3;
             this.txtMaxacthuc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -129,13 +113,14 @@
             // 
             // txtTensanpham
             // 
+            this.txtTensanpham.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTensanpham.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtTensanpham.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTensanpham.Location = new System.Drawing.Point(25, 71);
-            this.txtTensanpham.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTensanpham.Location = new System.Drawing.Point(33, 87);
+            this.txtTensanpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTensanpham.Multiline = true;
             this.txtTensanpham.Name = "txtTensanpham";
-            this.txtTensanpham.Size = new System.Drawing.Size(188, 26);
+            this.txtTensanpham.Size = new System.Drawing.Size(251, 31);
             this.txtTensanpham.TabIndex = 3;
             this.txtTensanpham.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -149,105 +134,87 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel3.Controls.Add(this.btnHuy);
+            this.panel3.Controls.Add(this.btnLuu);
             this.panel3.Controls.Add(this.cmbCategory);
             this.panel3.Controls.Add(this.bunifuCustomLabel6);
-            this.panel3.Controls.Add(this.btnLuu);
-            this.panel3.Controls.Add(this.btnHuy);
             this.panel3.Controls.Add(this.txtMaxacthuc);
             this.panel3.Controls.Add(this.txtGia);
             this.panel3.Controls.Add(this.txtTensanpham);
             this.panel3.Controls.Add(this.bunifuCustomLabel3);
             this.panel3.Controls.Add(this.bunifuCustomLabel4);
             this.panel3.Controls.Add(this.bunifuCustomLabel1);
-            this.panel3.Location = new System.Drawing.Point(310, 15);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(413, 18);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(285, 397);
+            this.panel3.Size = new System.Drawing.Size(380, 489);
             this.panel3.TabIndex = 1;
             // 
             // cmbCategory
             // 
+            this.cmbCategory.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.cmbCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(24, 140);
-            this.cmbCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbCategory.Location = new System.Drawing.Point(32, 172);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(143, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(189, 30);
             this.cmbCategory.TabIndex = 6;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(22, 174);
-            this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(29, 214);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(23, 13);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(44, 23);
             this.bunifuCustomLabel6.TabIndex = 5;
             this.bunifuCustomLabel6.Text = "Giá";
             // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
-            this.btnLuu.FlatAppearance.BorderSize = 0;
-            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLuu.Location = new System.Drawing.Point(34, 337);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(87, 35);
-            this.btnLuu.TabIndex = 0;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
             // txtGia
             // 
+            this.txtGia.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtGia.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGia.Location = new System.Drawing.Point(24, 202);
-            this.txtGia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGia.Location = new System.Drawing.Point(32, 249);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGia.Multiline = true;
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(188, 26);
+            this.txtGia.Size = new System.Drawing.Size(251, 31);
             this.txtGia.TabIndex = 3;
             this.txtGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(22, 243);
-            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(29, 299);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(72, 13);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(129, 23);
             this.bunifuCustomLabel3.TabIndex = 1;
             this.bunifuCustomLabel3.Text = "Mã Xác Thực";
             // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(22, 111);
-            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(29, 137);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(57, 13);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(102, 23);
             this.bunifuCustomLabel4.TabIndex = 0;
             this.bunifuCustomLabel4.Text = "Danh Mục";
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(22, 42);
-            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(29, 52);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(78, 13);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(132, 23);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Tên Sản Phẩm";
             // 
             // bunifuElipse10
             // 
             this.bunifuElipse10.ElipseRadius = 20;
-            this.bunifuElipse10.TargetControl = this.btnLuu;
             // 
             // bunifuElipse3
             // 
@@ -259,10 +226,11 @@
             this.btnCapnhat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnCapnhat.FlatAppearance.BorderSize = 0;
             this.btnCapnhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapnhat.Location = new System.Drawing.Point(58, 171);
-            this.btnCapnhat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCapnhat.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapnhat.Location = new System.Drawing.Point(77, 210);
+            this.btnCapnhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapnhat.Name = "btnCapnhat";
-            this.btnCapnhat.Size = new System.Drawing.Size(117, 43);
+            this.btnCapnhat.Size = new System.Drawing.Size(156, 53);
             this.btnCapnhat.TabIndex = 0;
             this.btnCapnhat.Text = "Cập Nhât";
             this.btnCapnhat.UseVisualStyleBackColor = false;
@@ -278,10 +246,11 @@
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(58, 100);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(77, 123);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(117, 43);
+            this.btnSua.Size = new System.Drawing.Size(156, 53);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -297,10 +266,11 @@
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Location = new System.Drawing.Point(58, 28);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(77, 34);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(117, 43);
+            this.btnThem.Size = new System.Drawing.Size(156, 53);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -311,10 +281,11 @@
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Location = new System.Drawing.Point(58, 249);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(77, 306);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(117, 43);
+            this.btnXoa.Size = new System.Drawing.Size(156, 53);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -328,10 +299,10 @@
             this.panel1.Controls.Add(this.btnCapnhat);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Location = new System.Drawing.Point(627, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(836, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 450);
+            this.panel1.Size = new System.Drawing.Size(291, 554);
             this.panel1.TabIndex = 0;
             // 
             // bunifuElipse4
@@ -347,9 +318,9 @@
             this.panel2.Controls.Add(this.dgvProduct);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(847, 457);
+            this.panel2.Size = new System.Drawing.Size(1129, 562);
             this.panel2.TabIndex = 2;
             // 
             // bunifuElipse11
@@ -362,14 +333,66 @@
             this.bunifuElipse12.ElipseRadius = 20;
             this.bunifuElipse12.TargetControl = this.txtGia;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.ActiveBorderThickness = 1;
+            this.btnLuu.ActiveCornerRadius = 20;
+            this.btnLuu.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnLuu.ActiveForecolor = System.Drawing.Color.White;
+            this.btnLuu.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLuu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLuu.BackgroundImage")));
+            this.btnLuu.ButtonText = "Lưu";
+            this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.IdleBorderThickness = 1;
+            this.btnLuu.IdleCornerRadius = 20;
+            this.btnLuu.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
+            this.btnLuu.IdleForecolor = System.Drawing.Color.White;
+            this.btnLuu.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
+            this.btnLuu.Location = new System.Drawing.Point(30, 401);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(143, 51);
+            this.btnLuu.TabIndex = 8;
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click_1);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.ActiveBorderThickness = 1;
+            this.btnHuy.ActiveCornerRadius = 20;
+            this.btnHuy.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnHuy.ActiveForecolor = System.Drawing.Color.White;
+            this.btnHuy.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnHuy.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnHuy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHuy.BackgroundImage")));
+            this.btnHuy.ButtonText = "Hủy";
+            this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.IdleBorderThickness = 1;
+            this.btnHuy.IdleCornerRadius = 20;
+            this.btnHuy.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
+            this.btnHuy.IdleForecolor = System.Drawing.Color.White;
+            this.btnHuy.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(140)))), ((int)(((byte)(207)))));
+            this.btnHuy.Location = new System.Drawing.Point(208, 401);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(143, 51);
+            this.btnHuy.TabIndex = 8;
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click_1);
+            // 
             // ManagerProDuct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManagerProDuct";
-            this.Size = new System.Drawing.Size(847, 457);
+            this.Size = new System.Drawing.Size(1129, 562);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -383,7 +406,6 @@
 
         private System.Windows.Forms.DataGridView dgvProduct;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse9;
-        private System.Windows.Forms.Button btnHuy;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse8;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse7;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtMaxacthuc;
@@ -391,7 +413,6 @@
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtTensanpham;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnLuu;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
@@ -411,5 +432,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse11;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse12;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnLuu;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnHuy;
     }
 }

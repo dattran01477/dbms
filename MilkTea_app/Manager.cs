@@ -54,7 +54,7 @@ namespace MilkTea_app
             DataTable dataTable = new DataTable();
             List<Category> listCategory = data.getCategory();
 
-            dataTable.Columns.Add("Tên");
+            dataTable.Columns.Add("Ten");
             dataTable.Columns.Add("Loai");
             foreach (var a in listCategory)
             {
