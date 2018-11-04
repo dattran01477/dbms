@@ -16,7 +16,7 @@ namespace MilkTea_app
     public partial class ManagerProDuct : UserControl
     {
         public int statusManager = 0; //0: tt ban dau, 1 tt them moi, 2 tt sua, 3 tt xoa, 4 tt click vao cell tren datagridview
-        DataStore data = new DataStore();
+        DataStore data;
         List<Category> category = new List<Category>();
         public class CategoryId
         {
@@ -25,11 +25,28 @@ namespace MilkTea_app
         }
         public List<CategoryId> arrcategory=new List<CategoryId>();
         public CategoryId categorytemmp;
+        private string userName;
+        private string pass;
+
         public ManagerProDuct()
         {
             InitializeComponent();
             LoadData();
         }
+
+        public ManagerProDuct(string userName, string pass)
+        {
+            this.userName = userName;
+            this.pass = pass;
+            InitializeComponent();
+            data = new DataStore(userName,pass);
+            if (data.isConnect)
+                LoadData();
+            else
+                return;
+
+        }
+
         public void LoadData()
         {
             loadButton();

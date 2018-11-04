@@ -26,7 +26,7 @@ namespace MilkTea_app
         int size;
 
 
-        private DataStore  data= new DataStore();
+        private DataStore data;
         private List<Products> productsOrder = new List<Products>();
         BsonArray bsonProductsOrder = new BsonArray();
 
@@ -36,6 +36,8 @@ namespace MilkTea_app
         int height;
 
         private string collectorName;
+        private string userName;
+        private string pass;
 
         public int Height1 { get => height; set => height = value; }
         public int Width1 { get => width; set => width = value; }
@@ -51,12 +53,28 @@ namespace MilkTea_app
             margin = ((flowLayoutPnBtn.Width - 4 * 180) / (4 + 2));
             size = flowLayoutPnBtn.Width / 4;
 
-
+  
 
 
 
         }
-       public void SetWidthHeight(int width,int height)
+
+        public PanelOrder(string userName, string pass)
+        {
+            this.userName = userName;
+            this.pass = pass;
+
+            InitializeComponent();
+            txtDisCount.Text = "0";
+
+            margin = ((flowLayoutPnBtn.Width - 4 * 180) / (4 + 2));
+            size = flowLayoutPnBtn.Width / 4;
+
+            data = new DataStore(userName, pass);
+
+        }
+
+        public void SetWidthHeight(int width,int height)
         {
              this.width=width/4*3;
              this.height=height;

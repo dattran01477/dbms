@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelOrder1 = new MilkTea_app.PanelOrder();
+            
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.SideBar = new System.Windows.Forms.Panel();
             this.pnOrderTopping = new System.Windows.Forms.Panel();
@@ -58,25 +58,13 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panelOrder1);
+            
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(237, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1138, 553);
             this.panel2.TabIndex = 1;
-            // 
-            // panelOrder1
-            // 
-            this.panelOrder1.AutoSize = true;
-            this.panelOrder1.CollectorName = null;
-            this.panelOrder1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelOrder1.Height1 = 0;
-            this.panelOrder1.Location = new System.Drawing.Point(0, 0);
-            this.panelOrder1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelOrder1.Name = "panelOrder1";
-            this.panelOrder1.Size = new System.Drawing.Size(1138, 553);
-            this.panelOrder1.TabIndex = 0;
-            this.panelOrder1.Width1 = 0;
+          
             // 
             // sidePanel1
             // 

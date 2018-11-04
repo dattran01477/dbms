@@ -21,12 +21,14 @@ namespace MilkTea_app
         bool isQuanLy = false;
         bool isThongKe = false;
 
-        Order or = new Order();
-        QuanLy ql = new QuanLy();
+        Order or;
+        QuanLy ql;
         Stack<BunifuThinButton2> sbtn = new Stack<BunifuThinButton2>();
         Stack<Object> pn = new Stack<object>();
 
         Object pnHienTai;
+        private string userName;
+        private string pass;
 
         public AppMilkTea()
         {
@@ -42,6 +44,21 @@ namespace MilkTea_app
           
 
 
+        }
+
+        public AppMilkTea(string text1, string text2)
+        {
+
+            InitializeComponent();
+            this.userName = text1;
+            this.pass = text2;
+            or = new Order(userName, pass);
+            ql = new QuanLy(userName, pass);
+            or.Dock = DockStyle.Fill;
+            //  pnDGV.Controls.Clear();
+            ql.AutoScaleMode = AutoScaleMode.None;
+            or.AutoScaleMode = AutoScaleMode.None;
+            pnDGV.Controls.Add(or);
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)

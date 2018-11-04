@@ -14,11 +14,31 @@ namespace MilkTea_app
     {
         bool isDanhMuc = false;
         bool isProduct = false;
-        private Manager managerCategory=new Manager();
-        private ManagerProDuct managerProDuct = new ManagerProDuct();
+        Manager managerCategory=null;
+        ManagerProDuct managerProDuct=null;
+        private string userName;
+        private string pass;
+
         public QuanLy()
         {
+
             InitializeComponent();
+     
+            managerCategory.Dock = DockStyle.Fill;
+            //  pnDGV.Controls.Clear();
+            managerCategory.AutoScaleMode = AutoScaleMode.None;
+            managerProDuct.AutoScaleMode = AutoScaleMode.None;
+            pnQL.Controls.Add(managerProDuct);
+        }
+
+        public QuanLy(string userName, string pass)
+        {
+            this.userName = userName;
+            this.pass = pass;
+
+            InitializeComponent();
+            managerCategory = new Manager(userName, pass);
+            managerProDuct = new ManagerProDuct(userName,pass);
             managerCategory.Dock = DockStyle.Fill;
             //  pnDGV.Controls.Clear();
             managerCategory.AutoScaleMode = AutoScaleMode.None;

@@ -54,6 +54,7 @@
             this.manager1.Name = "manager1";
             this.manager1.Size = new System.Drawing.Size(1375, 674);
             this.manager1.TabIndex = 0;
+         
             // 
             // Form2
             // 

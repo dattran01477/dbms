@@ -15,14 +15,30 @@ namespace MilkTea_app
 {
     public partial class Manager : UserControl
     {
-        DataStore data = new DataStore();
+        DataStore data;
         List<Category> category = new List<Category>();
         public int statusManager=0;
+        private string userName;
+        private string pass;
+
         public Manager()
         {
             InitializeComponent();
             LoadData();
         }
+
+        public Manager(string userName, string pass)
+        {
+            this.userName = userName;
+            this.pass = pass;
+            InitializeComponent();
+            data = new DataStore(userName,pass);
+            if (data.isConnect)
+                LoadData();
+            else
+                return;
+        }
+
         public void SetWidthHeight(int width, int height)
         {
           

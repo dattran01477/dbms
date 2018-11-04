@@ -15,17 +15,32 @@ namespace MilkTea_app.BLL
 {
     class DataStore
     {
-       private MongoClient client;
-       private IMongoDatabase database;
-        public DataStore(string hostName,string dataName)
+       private  MongoClient client;
+       private  IMongoDatabase database;
+        public static String role;
+        public bool isConnect = false;
+        private string userName, pass;
+        public DataStore(string userName,string pass)
         {
+            this.userName = userName;
+            this.pass = pass;
             try
             {
-                client = new MongoClient(hostName+":27017");
-                database = client.GetDatabase(dataName);
+                client = new MongoClient("mongodb://"+ userName+":"+pass+"@127.0.0.1:27017/admin");
+                database = client.GetDatabase("QuanLyTraSua");
+                bool isMongoLive = database.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
+
+                if (isMongoLive)
+                {
+                    isConnect = true;
+                }
+                else
+                {
+                    isConnect = false;
+                }
 
             }
-            catch (Exception e)
+            catch (MongoException e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -33,9 +48,10 @@ namespace MilkTea_app.BLL
 
         public DataStore()
         {
+            string stringConn = "mongodb://ThanhDat:123@localhost:27017/admin";
             try
             {
-                client = new MongoClient();
+                client = new MongoClient(stringConn);
                 database = client.GetDatabase("QuanLyTraSua");
 
             }
@@ -87,7 +103,21 @@ namespace MilkTea_app.BLL
             return categoriesList;
         }
 
+        private void getRoles()
+        {
+            var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "getRoles('"+userName+"')" } });
 
+            var array = reult["retval"].AsBsonArray;
+            //foreach (var b in array)
+            //{
+            //    category = new Category();
+            //    category._id = b["_id"].AsObjectId;
+            //    category.type = b["type"].AsString;
+            //    category.name = b["name"].AsString;
+            //    categoriesList.Add(category);
+            //}
+           
+        }
         public List<Category> getCategoryFood()
         {
             List<Category> categoriesList = new List<Category>();
