@@ -12,6 +12,8 @@ using MilkTea_app.BLL;
 using MilkTea_app.DTO;
 using Bunifu.Framework.UI;
 using System.Windows.Media;
+using DevExpress.XtraReports.UI;
+using System.Linq;
 
 namespace MilkTea_app
 {
@@ -29,6 +31,7 @@ namespace MilkTea_app
         Object pnHienTai;
         private string userName;
         private string pass;
+        private List<String> role;
 
         public AppMilkTea()
         {
@@ -38,20 +41,16 @@ namespace MilkTea_app
             ql.AutoScaleMode = AutoScaleMode.None;
             or.AutoScaleMode = AutoScaleMode.None;
             pnDGV.Controls.Add(or);
-         
-        
-
-          
-
-
+           
         }
 
-        public AppMilkTea(string text1, string text2)
+        public AppMilkTea(string text1, string text2,List<String> role)
         {
 
             InitializeComponent();
             this.userName = text1;
             this.pass = text2;
+            this.role = role;
             or = new Order(userName, pass);
             ql = new QuanLy(userName, pass);
             or.Dock = DockStyle.Fill;
@@ -59,8 +58,27 @@ namespace MilkTea_app
             ql.AutoScaleMode = AutoScaleMode.None;
             or.AutoScaleMode = AutoScaleMode.None;
             pnDGV.Controls.Add(or);
-        }
+            authorization(role);
 
+
+        }
+        private void authorization(List<String> role)
+
+        {
+            lbName.Text = "Xin Chào  " + userName;
+            if (role.Any(e=>e.EndsWith("NhanVien1")))
+            {
+                btnQuanLy.Hide();
+                btnThongKe.Hide();
+            }
+            if(role.Any(e=>e.EndsWith("QuanLy")))
+            {
+                btnThongKe.Enabled = true;
+                btnOrder.Enabled = true;
+                btnThongKe.Enabled = true;
+            }
+            
+        }
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             BunifuThinButton2 btn = sender as BunifuThinButton2;
@@ -134,11 +152,26 @@ namespace MilkTea_app
                 isThongKe = false;
                 isQuanLy = false;
             }
+            if (isThongKe)
+            {
+                XtraReport1 report1 = new XtraReport1(userName,pass);
+            
+                report1.ShowPreviewDialog();
+                isOerder = false;
+                isThongKe = false;
+                isQuanLy = false;
+            }
            
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DataStore.roles = null;
             this.Close();
         }
     }

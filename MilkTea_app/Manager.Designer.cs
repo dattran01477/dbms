@@ -49,13 +49,13 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse6 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse7 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse9 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse10 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
@@ -77,6 +77,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(291, 554);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnXoa
             // 
@@ -170,6 +171,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1163, 560);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -188,6 +190,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(413, 462);
             this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnLuu
             // 
@@ -245,6 +248,7 @@
             this.txtMaxacthuc.Name = "txtMaxacthuc";
             this.txtMaxacthuc.Size = new System.Drawing.Size(179, 39);
             this.txtMaxacthuc.TabIndex = 3;
+            this.txtMaxacthuc.TextChanged += new System.EventHandler(this.txtMaxacthuc_TextChanged);
             // 
             // txtTendanhmuc
             // 
@@ -257,6 +261,7 @@
             this.txtTendanhmuc.Name = "txtTendanhmuc";
             this.txtTendanhmuc.Size = new System.Drawing.Size(251, 39);
             this.txtTendanhmuc.TabIndex = 3;
+            this.txtTendanhmuc.TextChanged += new System.EventHandler(this.txtTendanhmuc_TextChanged);
             // 
             // bunifuCustomLabel3
             // 
@@ -266,6 +271,7 @@
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(129, 23);
             this.bunifuCustomLabel3.TabIndex = 1;
             this.bunifuCustomLabel3.Text = "Mã Xác Thực";
+            this.bunifuCustomLabel3.Click += new System.EventHandler(this.bunifuCustomLabel3_Click);
             // 
             // bunifuCustomLabel2
             // 
@@ -275,6 +281,7 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(45, 23);
             this.bunifuCustomLabel2.TabIndex = 1;
             this.bunifuCustomLabel2.Text = "Loại";
+            this.bunifuCustomLabel2.Click += new System.EventHandler(this.bunifuCustomLabel2_Click);
             // 
             // bunifuCustomLabel1
             // 
@@ -284,6 +291,7 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(138, 23);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Tên Danh Mục";
+            this.bunifuCustomLabel1.Click += new System.EventHandler(this.bunifuCustomLabel1_Click);
             // 
             // dgvProduct
             // 
@@ -300,6 +308,19 @@
             this.dgvProduct.Size = new System.Drawing.Size(371, 551);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
+            this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
+            // 
+            // Ten
+            // 
+            this.Ten.DataPropertyName = "Ten";
+            this.Ten.HeaderText = "Tên";
+            this.Ten.Name = "Ten";
+            // 
+            // Loai
+            // 
+            this.Loai.DataPropertyName = "Loai";
+            this.Loai.HeaderText = "Loại";
+            this.Loai.Name = "Loai";
             // 
             // bunifuElipse5
             // 
@@ -326,29 +347,19 @@
             this.bunifuElipse10.ElipseRadius = 20;
             this.bunifuElipse10.TargetControl = this.btnLuu;
             // 
-            // Ten
-            // 
-            this.Ten.DataPropertyName = "Ten";
-            this.Ten.HeaderText = "Tên";
-            this.Ten.Name = "Ten";
-            // 
-            // Loai
-            // 
-            this.Loai.DataPropertyName = "Loai";
-            this.Loai.HeaderText = "Loại";
-            this.Loai.Name = "Loai";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // Manager
             // 

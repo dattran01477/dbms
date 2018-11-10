@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txtHostName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.panel1.SuspendLayout();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,6 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.txtHostName);
             this.panel1.Controls.Add(this.ckIsManager);
             this.panel1.Controls.Add(this.ckIsEmployee);
             this.panel1.Controls.Add(this.btnLogin);
@@ -205,6 +207,26 @@
             this.txtName.TabIndex = 1;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // txtHostName
+            // 
+            this.txtHostName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtHostName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtHostName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtHostName.HintForeColor = System.Drawing.Color.Empty;
+            this.txtHostName.HintText = "";
+            this.txtHostName.isPassword = false;
+            this.txtHostName.LineFocusedColor = System.Drawing.Color.Blue;
+            this.txtHostName.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtHostName.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.txtHostName.LineThickness = 3;
+            this.txtHostName.Location = new System.Drawing.Point(4, 188);
+            this.txtHostName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHostName.Name = "txtHostName";
+            this.txtHostName.Size = new System.Drawing.Size(198, 33);
+            this.txtHostName.TabIndex = 12;
+            this.txtHostName.Text = "127.0.0.1";
+            this.txtHostName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,5 +259,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox ckIsManager;
         private System.Windows.Forms.CheckBox ckIsEmployee;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtHostName;
     }
 }

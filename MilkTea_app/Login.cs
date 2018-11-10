@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MilkTea_app
 {
-    public partial class Login : Form
+    public  partial class Login : Form
     {
         public static String quyen;
         DataStore data;
@@ -34,18 +34,28 @@ namespace MilkTea_app
         {
 
         }
+      
         async  void CallWithAsync()
         {
             try
             {
                 MessageBox.Show("Xin vui lòng đợi");
                 bool t1 = await IsConn();
+                
                 if (data.isConnect)
                 {
-                    
-                    AppMilkTea appMilkTea = new AppMilkTea(txtName.Text, txtPass.Text);
+                    List<String> role = data.getRoles(txtName.Text);
+                   
+                    AppMilkTea appMilkTea = new AppMilkTea(txtName.Text, txtPass.Text,role);
                     appMilkTea.Show();
+                    DataStore.roles = role;
                     this.Hide();
+                    appMilkTea.FormClosing += AppMilkTea_FormClosing;
+
+                    
+
+                    
+                    
                 }
                 else
                 {
@@ -57,10 +67,17 @@ namespace MilkTea_app
                 Console.WriteLine(ex.Message);
             }
         }
+
+        private void AppMilkTea_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
+        }
+
         public Task<bool> IsConn( )
         {
+            DataStore.hostName = txtHostName.Text;
             data = new DataStore(txtName.Text, txtPass.Text);
-           
+            
             return Task.Run<bool>(() => { return data.isConnect; });
         }
     }

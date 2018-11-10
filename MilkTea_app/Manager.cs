@@ -239,5 +239,60 @@ namespace MilkTea_app
             statusManager = 0;
             loadButton();
         }
+
+        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtMaxacthuc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTendanhmuc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

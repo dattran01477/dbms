@@ -29,22 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppMilkTea));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.pnTopBar = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnDGV = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.animator2 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.btnThongKe = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnQuanLy = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnOrder = new Bunifu.Framework.UI.BunifuThinButton2();
             this.button5 = new System.Windows.Forms.Button();
+            this.pnLogo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnDGV = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.animator1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.animator2 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.btnLogout = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.lbName = new System.Windows.Forms.Label();
             this.pnTopBar.SuspendLayout();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,6 +56,8 @@
             // 
             this.pnTopBar.AutoScroll = true;
             this.pnTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.pnTopBar.Controls.Add(this.lbName);
+            this.pnTopBar.Controls.Add(this.btnLogout);
             this.pnTopBar.Controls.Add(this.label2);
             this.pnTopBar.Controls.Add(this.btnThongKe);
             this.pnTopBar.Controls.Add(this.btnQuanLy);
@@ -78,85 +82,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(2, 186);
             this.label2.TabIndex = 8;
-            // 
-            // pnLogo
-            // 
-            this.pnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
-            this.pnLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnLogo.Controls.Add(this.label1);
-            this.pnLogo.Controls.Add(this.pictureBox1);
-            this.animator2.SetDecoration(this.pnLogo, BunifuAnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.pnLogo, BunifuAnimatorNS.DecorationType.None);
-            this.pnLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(232, 189);
-            this.pnLogo.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.animator1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.animator2.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 161);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "The Best Of Milk Tea";
-            // 
-            // pnDGV
-            // 
-            this.animator2.SetDecoration(this.pnDGV, BunifuAnimatorNS.DecorationType.None);
-            this.animator1.SetDecoration(this.pnDGV, BunifuAnimatorNS.DecorationType.None);
-            this.pnDGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnDGV.Location = new System.Drawing.Point(0, 189);
-            this.pnDGV.Name = "pnDGV";
-            this.pnDGV.Size = new System.Drawing.Size(1375, 549);
-            this.pnDGV.TabIndex = 2;
-            // 
-            // animator1
-            // 
-            this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
-            this.animator1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.animator1.DefaultAnimation = animation1;
-            // 
-            // animator2
-            // 
-            this.animator2.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
-            this.animator2.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.animator2.DefaultAnimation = animation2;
             // 
             // btnThongKe
             // 
@@ -258,6 +183,33 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // pnLogo
+            // 
+            this.pnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.pnLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnLogo.Controls.Add(this.label1);
+            this.pnLogo.Controls.Add(this.pictureBox1);
+            this.animator2.SetDecoration(this.pnLogo, BunifuAnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.pnLogo, BunifuAnimatorNS.DecorationType.None);
+            this.pnLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pnLogo.Name = "pnLogo";
+            this.pnLogo.Size = new System.Drawing.Size(232, 189);
+            this.pnLogo.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.animator1.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.animator2.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 161);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "The Best Of Milk Tea";
+            // 
             // pictureBox1
             // 
             this.animator1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
@@ -270,6 +222,99 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // pnDGV
+            // 
+            this.animator2.SetDecoration(this.pnDGV, BunifuAnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.pnDGV, BunifuAnimatorNS.DecorationType.None);
+            this.pnDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDGV.Location = new System.Drawing.Point(0, 189);
+            this.pnDGV.Name = "pnDGV";
+            this.pnDGV.Size = new System.Drawing.Size(1375, 549);
+            this.pnDGV.TabIndex = 2;
+            // 
+            // animator1
+            // 
+            this.animator1.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.animator1.Cursor = null;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.animator1.DefaultAnimation = animation4;
+            // 
+            // animator2
+            // 
+            this.animator2.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.animator2.Cursor = null;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.animator2.DefaultAnimation = animation3;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.ActiveBorderThickness = 1;
+            this.btnLogout.ActiveCornerRadius = 20;
+            this.btnLogout.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnLogout.ActiveForecolor = System.Drawing.Color.White;
+            this.btnLogout.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
+            this.btnLogout.ButtonText = "Đăng Xuất";
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.animator2.SetDecoration(this.btnLogout, BunifuAnimatorNS.DecorationType.None);
+            this.animator1.SetDecoration(this.btnLogout, BunifuAnimatorNS.DecorationType.None);
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnLogout.IdleBorderThickness = 1;
+            this.btnLogout.IdleCornerRadius = 20;
+            this.btnLogout.IdleFillColor = System.Drawing.Color.White;
+            this.btnLogout.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnLogout.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnLogout.Location = new System.Drawing.Point(1165, 5);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(124, 41);
+            this.btnLogout.TabIndex = 9;
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // lbName
+            // 
+            this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbName.AutoSize = true;
+            this.animator1.SetDecoration(this.lbName, BunifuAnimatorNS.DecorationType.None);
+            this.animator2.SetDecoration(this.lbName, BunifuAnimatorNS.DecorationType.None);
+            this.lbName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(909, 12);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(0, 23);
+            this.lbName.TabIndex = 10;
             // 
             // AppMilkTea
             // 
@@ -288,6 +333,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trà Sữa Di&Pi";
             this.pnTopBar.ResumeLayout(false);
+            this.pnTopBar.PerformLayout();
             this.pnLogo.ResumeLayout(false);
             this.pnLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -309,6 +355,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private BunifuAnimatorNS.BunifuTransition animator1;
         private BunifuAnimatorNS.BunifuTransition animator2;
+        private System.Windows.Forms.Label lbName;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnLogout;
     }
 }
 

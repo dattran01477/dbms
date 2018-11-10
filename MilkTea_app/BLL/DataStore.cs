@@ -17,7 +17,8 @@ namespace MilkTea_app.BLL
     {
        private  MongoClient client;
        private  IMongoDatabase database;
-        public static String role;
+        public static List<String> roles;
+        public static String hostName;
         public bool isConnect = false;
         private string userName, pass;
         public DataStore(string userName,string pass)
@@ -26,7 +27,7 @@ namespace MilkTea_app.BLL
             this.pass = pass;
             try
             {
-                client = new MongoClient("mongodb://"+ userName+":"+pass+"@127.0.0.1:27017/admin");
+                client = new MongoClient("mongodb://"+ userName+":"+pass+ "@"+hostName+":27017/QuanLyTraSua");
                 database = client.GetDatabase("QuanLyTraSua");
                 bool isMongoLive = database.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
 
@@ -48,7 +49,7 @@ namespace MilkTea_app.BLL
 
         public DataStore()
         {
-            string stringConn = "mongodb://ThanhDat:123@localhost:27017/admin";
+            string stringConn = "mongodb://ThanhDat:123@localhost:27017";
             try
             {
                 client = new MongoClient(stringConn);
@@ -333,6 +334,7 @@ namespace MilkTea_app.BLL
 
         public void get()
         {
+            
             var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "GetCategoryDrink()" } });
 
             var array = reult["retval"].AsBsonArray;
@@ -435,6 +437,80 @@ namespace MilkTea_app.BLL
             {
                 MessageBox.Show("Lỗi rồi! Không xóa được dữ liệu!");
             }
+        }
+
+        //report
+        public int getHoaDonNgay()
+        {
+            int soHoaDon = 0;
+            try
+            {
+                var reult2 = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "getSoHoaDonTheNgay()" } });
+                 soHoaDon =(int) reult2["retval"].AsDouble;
+
+              
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return soHoaDon;
+        }
+        public int getTongChiecKhau()
+        {
+            int tongChiecKhau = 0;
+            try
+            {
+                var reult2 = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "getTongChiecKhau()" } });
+                tongChiecKhau = (int)reult2["retval"].AsDouble;
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return tongChiecKhau;
+        }
+        public int getDoanhThuTheoNgay()
+        {
+            int soDoanhThuNgay = 0;
+            try
+            {
+                var reult2 = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "getDoanhThuTheoNgay()" } });
+                soDoanhThuNgay = (int)reult2["retval"].AsDouble;
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return soDoanhThuNgay;
+        }
+        public List<String> getRoles(String name)
+        {
+            List<String> roles2 = new List<String>();
+          
+           
+            try
+            {
+                var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "getRoles('"+name+"')" } });
+
+                var array = reult["retval"].AsBsonArray;
+                foreach (var b in array)
+                {
+                    
+                    roles2.Add(b.AsString);
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            roles = roles2;
+            return roles2;
         }
 
 

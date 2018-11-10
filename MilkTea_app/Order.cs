@@ -46,7 +46,7 @@ namespace MilkTea_app
             this.userName = userName;
             this.pass = pass;
             data = new DataStore(this.userName, this.pass);
-
+           
             if (data.isConnect)
             {
                 AddCategory(data.getCategoryDrink(), panelCategoryDrinkOrder);
