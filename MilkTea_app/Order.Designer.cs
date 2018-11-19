@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.SideBar = new System.Windows.Forms.Panel();
             this.pnOrderTopping = new System.Windows.Forms.Panel();
@@ -41,7 +40,6 @@
             this.btnOrderFood = new System.Windows.Forms.Button();
             this.btnOrderDrinks = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.sidePanel1.SuspendLayout();
             this.SideBar.SuspendLayout();
             this.SuspendLayout();
@@ -52,27 +50,28 @@
             this.panel1.Controls.Add(this.sidePanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1375, 553);
+            this.panel1.Size = new System.Drawing.Size(1031, 449);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(237, 0);
+            this.panel2.Location = new System.Drawing.Point(178, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1138, 553);
+            this.panel2.Size = new System.Drawing.Size(853, 449);
             this.panel2.TabIndex = 1;
-          
             // 
             // sidePanel1
             // 
             this.sidePanel1.Controls.Add(this.SideBar);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel1.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(237, 553);
+            this.sidePanel1.Size = new System.Drawing.Size(178, 449);
             this.sidePanel1.TabIndex = 0;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -88,9 +87,9 @@
             this.SideBar.Controls.Add(this.btnOrderDrinks);
             this.SideBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SideBar.Location = new System.Drawing.Point(0, 0);
-            this.SideBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.SideBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SideBar.Name = "SideBar";
-            this.SideBar.Size = new System.Drawing.Size(236, 553);
+            this.SideBar.Size = new System.Drawing.Size(177, 449);
             this.SideBar.TabIndex = 1;
             this.SideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.SideBar_Paint);
             // 
@@ -98,9 +97,10 @@
             // 
             this.pnOrderTopping.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnOrderTopping.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
-            this.pnOrderTopping.Location = new System.Drawing.Point(27, 214);
+            this.pnOrderTopping.Location = new System.Drawing.Point(20, 174);
+            this.pnOrderTopping.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnOrderTopping.Name = "pnOrderTopping";
-            this.pnOrderTopping.Size = new System.Drawing.Size(182, 10);
+            this.pnOrderTopping.Size = new System.Drawing.Size(136, 8);
             this.pnOrderTopping.TabIndex = 6;
             // 
             // btnTopping
@@ -111,10 +111,10 @@
             this.btnTopping.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
             this.btnTopping.Image = global::MilkTea_app.Properties.Resources.tray__1_;
             this.btnTopping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTopping.Location = new System.Drawing.Point(2, 151);
-            this.btnTopping.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnTopping.Location = new System.Drawing.Point(2, 123);
+            this.btnTopping.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTopping.Name = "btnTopping";
-            this.btnTopping.Size = new System.Drawing.Size(211, 62);
+            this.btnTopping.Size = new System.Drawing.Size(171, 50);
             this.btnTopping.TabIndex = 5;
             this.btnTopping.Text = "Topping";
             this.btnTopping.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -127,27 +127,30 @@
             this.label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(178)))), ((int)(((byte)(183)))));
             this.label.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(178)))), ((int)(((byte)(183)))));
-            this.label.Location = new System.Drawing.Point(224, 0);
+            this.label.Location = new System.Drawing.Point(168, 0);
+            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(8, 62);
+            this.label.Size = new System.Drawing.Size(6, 50);
             this.label.TabIndex = 3;
             // 
             // panelCategoryFoodOrder
             // 
             this.panelCategoryFoodOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCategoryFoodOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
-            this.panelCategoryFoodOrder.Location = new System.Drawing.Point(23, 140);
+            this.panelCategoryFoodOrder.Location = new System.Drawing.Point(17, 114);
+            this.panelCategoryFoodOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelCategoryFoodOrder.Name = "panelCategoryFoodOrder";
-            this.panelCategoryFoodOrder.Size = new System.Drawing.Size(182, 10);
+            this.panelCategoryFoodOrder.Size = new System.Drawing.Size(136, 8);
             this.panelCategoryFoodOrder.TabIndex = 4;
             // 
             // panelCategoryDrinkOrder
             // 
             this.panelCategoryDrinkOrder.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCategoryDrinkOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
-            this.panelCategoryDrinkOrder.Location = new System.Drawing.Point(24, 63);
+            this.panelCategoryDrinkOrder.Location = new System.Drawing.Point(18, 51);
+            this.panelCategoryDrinkOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelCategoryDrinkOrder.Name = "panelCategoryDrinkOrder";
-            this.panelCategoryDrinkOrder.Size = new System.Drawing.Size(182, 13);
+            this.panelCategoryDrinkOrder.Size = new System.Drawing.Size(136, 11);
             this.panelCategoryDrinkOrder.TabIndex = 3;
             // 
             // btnOrderFood
@@ -158,10 +161,10 @@
             this.btnOrderFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(162)))), ((int)(((byte)(171)))));
             this.btnOrderFood.Image = global::MilkTea_app.Properties.Resources.tray__1_;
             this.btnOrderFood.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrderFood.Location = new System.Drawing.Point(-2, 77);
-            this.btnOrderFood.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnOrderFood.Location = new System.Drawing.Point(-2, 63);
+            this.btnOrderFood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrderFood.Name = "btnOrderFood";
-            this.btnOrderFood.Size = new System.Drawing.Size(211, 62);
+            this.btnOrderFood.Size = new System.Drawing.Size(175, 50);
             this.btnOrderFood.TabIndex = 2;
             this.btnOrderFood.Text = "Order Foods";
             this.btnOrderFood.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -177,9 +180,9 @@
             this.btnOrderDrinks.Image = global::MilkTea_app.Properties.Resources.tray__1_;
             this.btnOrderDrinks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderDrinks.Location = new System.Drawing.Point(-2, 0);
-            this.btnOrderDrinks.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnOrderDrinks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrderDrinks.Name = "btnOrderDrinks";
-            this.btnOrderDrinks.Size = new System.Drawing.Size(211, 62);
+            this.btnOrderDrinks.Size = new System.Drawing.Size(175, 50);
             this.btnOrderDrinks.TabIndex = 0;
             this.btnOrderDrinks.Text = "Order Drinks";
             this.btnOrderDrinks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -188,14 +191,13 @@
             // 
             // Order
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Order";
-            this.Size = new System.Drawing.Size(1375, 553);
+            this.Size = new System.Drawing.Size(1031, 449);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.sidePanel1.ResumeLayout(false);
             this.SideBar.ResumeLayout(false);
             this.ResumeLayout(false);

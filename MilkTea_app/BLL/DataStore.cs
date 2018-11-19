@@ -62,7 +62,79 @@ namespace MilkTea_app.BLL
             }
         }
 
-       
+       public List<Employees> GetEmployees()
+        {
+            List<Employees> employeesList = new List<Employees>();
+            Employees employees;
+            try
+            {
+                var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", "GetEmployees()" } });
+
+                var array = reult["retval"].AsBsonArray;
+                foreach (var b in array)
+                {
+                    employees = new Employees();
+                    employees._id = b["_id"].AsObjectId;
+                    employees.MaNV = b["MaNV"].AsString;
+                    employees.Hoten = b["Hoten"].AsString;
+                    employees.Ngaysinh = b["Ngaysinh"].AsString;
+                    employees.Diachi = b["Diachi"].AsString;
+                    employees.Chucvu = b["Chucvu"].AsString;
+                    employeesList.Add(employees);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return employeesList;
+
+        }
+        public void addEmployees(string MaNV,string TenNV,string Ngaysinh,string Diachi,string Chucvu)
+        {
+            try
+            {
+                string str = "addEmployees('" + MaNV + "','" + TenNV + "','" +Ngaysinh+ "','"+Diachi+"','"+Chucvu+"');";
+                MessageBox.Show(str);
+                var a=database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Đã tồn tại nhân viên, kiểm tra lại!");
+                else MessageBox.Show("Thêm thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
+            }
+        }
+        public void deleteEmployees(string Manv)
+        {
+            try
+            {
+                string str = "deleteEmployees('" + Manv + "');";
+                MessageBox.Show(str);
+                database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                MessageBox.Show("Đã xóa thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không xóa được dữ liệu!");
+            }
+        }
+        public void updateEmployees(string MaNV,string TenNV,String Ngaysinh,string Diachi,String Chucvu)
+        {
+            try
+            {
+                string str = "updateEmployees('" + MaNV + "','" + TenNV + "','" + Ngaysinh + "','" + Diachi + "','" + Chucvu + "');";
+                MessageBox.Show(str);
+                var a = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Không thể cập nhật thông tin!");
+                else MessageBox.Show("Đã cập nhật thông tin thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
+            }
+        }
+
 
         public List<Category> getCategoryDrink()
         {
@@ -349,17 +421,19 @@ namespace MilkTea_app.BLL
         public void postProducts(string name, string price,string categoryId)
         {
             try
-                {
-                string str = "addPoducts('" + name + "'," + price + "," + "ObjectId('" + categoryId + "'));";
+            {
+                string str = "addPoducts('" + name + "'," + price + ",'" + categoryId + "');";
                 MessageBox.Show(str);
-                database.RunCommand<BsonDocument>(new BsonDocument { { "eval",str } });
-                MessageBox.Show("Đã thêm thành công");
-            }
+                var a=database.RunCommand<BsonDocument>(new BsonDocument { { "eval",str } });
+                if (a["retval"].ToString() == "1") MessageBox.Show("Đã thêm thành công");
+                else MessageBox.Show("Dữ liệu thêm vào bị lỗi rồi!");
+            MessageBox.Show("Đã thêm thành công");
+        }
             catch
             {
                 MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
             }
-        }
+}
         public void updateProducts(string name, string price, string categoryId)
         {
             try
@@ -397,10 +471,11 @@ namespace MilkTea_app.BLL
         {
             try
             {
-                string str = "insertCategory('" + name + "'," +type + "));";
-                MessageBox.Show(str);
-                database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
-                MessageBox.Show("Đã thêm thành công");
+                string str = "insertCategory('" + name + "','" +type + "');";
+                var a=database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                //MessageBox.Show(a["retval"].ToString());
+                if (a["retval"].ToString() == "1") MessageBox.Show("Đã thêm thành công");
+                else MessageBox.Show("Dữ liệu thêm vào bị lỗi rồi!");
             }
             catch
             {
@@ -411,7 +486,7 @@ namespace MilkTea_app.BLL
         {
             try
             {
-                string str = "updateCategory('" + name + "'," + type + "));";
+                string str = "updateCategory('" + name + "'," + type + ");";
                 MessageBox.Show(str);
                 database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 MessageBox.Show("Đã thêm thành công");
@@ -430,7 +505,9 @@ namespace MilkTea_app.BLL
                 {
                     string str = "deleteCategory('" + name + "');";
                     MessageBox.Show(str);
-                    database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                    var a=database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                    if (a["retval"].ToString() == "1") MessageBox.Show("Đã xóa thành công");
+                    else MessageBox.Show("Còn tồn tại các Products thuộc "+ name +" !");
                 }
             }
             catch

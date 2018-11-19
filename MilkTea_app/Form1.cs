@@ -129,6 +129,8 @@ namespace MilkTea_app
             ChangeBtn(btn);
             if(isQuanLy==true)
             {
+                ql = new QuanLy(userName, pass);
+                ql.AutoScaleMode = AutoScaleMode.None;
                 ql.Dock = DockStyle.Fill;
               //  pnDGV.Controls.Clear();
                 animator1.Hide(or);
@@ -141,7 +143,8 @@ namespace MilkTea_app
             }
             if(isOerder==true)
             {
-               
+                or = new Order(userName, pass);
+                or.AutoScaleMode = AutoScaleMode.None;
                 or.Dock = DockStyle.Fill;
                 //   pnDGV.Controls.Clear();
                 animator1.Hide(ql);

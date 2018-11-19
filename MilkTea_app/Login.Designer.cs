@@ -40,7 +40,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txtHostName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.cmbIP = new System.Windows.Forms.ComboBox();
+            this.lblIP = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,7 +50,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
-            this.panel1.Controls.Add(this.txtHostName);
+            this.panel1.Controls.Add(this.lblIP);
+            this.panel1.Controls.Add(this.cmbIP);
             this.panel1.Controls.Add(this.ckIsManager);
             this.panel1.Controls.Add(this.ckIsEmployee);
             this.panel1.Controls.Add(this.btnLogin);
@@ -60,17 +62,19 @@
             this.panel1.Controls.Add(this.txtName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 332);
+            this.panel1.Size = new System.Drawing.Size(503, 270);
             this.panel1.TabIndex = 0;
             // 
             // ckIsManager
             // 
             this.ckIsManager.AutoSize = true;
             this.ckIsManager.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.ckIsManager.Location = new System.Drawing.Point(472, 220);
+            this.ckIsManager.Location = new System.Drawing.Point(354, 179);
+            this.ckIsManager.Margin = new System.Windows.Forms.Padding(2);
             this.ckIsManager.Name = "ckIsManager";
-            this.ckIsManager.Size = new System.Drawing.Size(98, 24);
+            this.ckIsManager.Size = new System.Drawing.Size(81, 21);
             this.ckIsManager.TabIndex = 1;
             this.ckIsManager.Text = "manager";
             this.ckIsManager.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             this.ckIsEmployee.AutoSize = true;
             this.ckIsEmployee.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.ckIsEmployee.Location = new System.Drawing.Point(301, 220);
+            this.ckIsEmployee.Location = new System.Drawing.Point(226, 179);
+            this.ckIsEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.ckIsEmployee.Name = "ckIsEmployee";
-            this.ckIsEmployee.Size = new System.Drawing.Size(105, 24);
+            this.ckIsEmployee.Size = new System.Drawing.Size(87, 21);
             this.ckIsEmployee.TabIndex = 2;
             this.ckIsEmployee.Text = "employee";
             this.ckIsEmployee.UseVisualStyleBackColor = true;
@@ -105,10 +110,10 @@
             this.btnLogin.IdleFillColor = System.Drawing.Color.DarkSlateGray;
             this.btnLogin.IdleForecolor = System.Drawing.Color.LightCyan;
             this.btnLogin.IdleLineColor = System.Drawing.Color.DarkSlateGray;
-            this.btnLogin.Location = new System.Drawing.Point(336, 262);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLogin.Location = new System.Drawing.Point(252, 213);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(189, 41);
+            this.btnLogin.Size = new System.Drawing.Size(142, 33);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -117,9 +122,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(233, 172);
+            this.label3.Location = new System.Drawing.Point(175, 140);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 19);
+            this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "PassWord:";
             // 
@@ -127,9 +133,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(233, 87);
+            this.label2.Location = new System.Drawing.Point(175, 71);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 19);
+            this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 10;
             this.label2.Text = "UserName:";
             // 
@@ -139,10 +146,10 @@
             this.pnLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnLogo.Controls.Add(this.label1);
             this.pnLogo.Controls.Add(this.pictureBox1);
-            this.pnLogo.Location = new System.Drawing.Point(13, 15);
-            this.pnLogo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pnLogo.Location = new System.Drawing.Point(10, 12);
+            this.pnLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(179, 166);
+            this.pnLogo.Size = new System.Drawing.Size(135, 135);
             this.pnLogo.TabIndex = 9;
             // 
             // label1
@@ -150,20 +157,19 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 138);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 19);
+            this.label1.Size = new System.Drawing.Size(129, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "The Best Of Milk Tea";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MilkTea_app.Properties.Resources.logo21;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(169, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(127, 101);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -180,12 +186,12 @@
             this.txtPass.LineIdleColor = System.Drawing.Color.Gray;
             this.txtPass.LineMouseHoverColor = System.Drawing.Color.DimGray;
             this.txtPass.LineThickness = 2;
-            this.txtPass.Location = new System.Drawing.Point(336, 160);
+            this.txtPass.Location = new System.Drawing.Point(252, 130);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(306, 33);
+            this.txtPass.Size = new System.Drawing.Size(230, 27);
             this.txtPass.TabIndex = 1;
-            this.txtPass.Text = "Pass";
+            this.txtPass.Text = "123";
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtName
@@ -200,40 +206,41 @@
             this.txtName.LineIdleColor = System.Drawing.Color.Gray;
             this.txtName.LineMouseHoverColor = System.Drawing.Color.DimGray;
             this.txtName.LineThickness = 3;
-            this.txtName.Location = new System.Drawing.Point(336, 75);
+            this.txtName.Location = new System.Drawing.Point(252, 61);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(306, 33);
+            this.txtName.Size = new System.Drawing.Size(230, 27);
             this.txtName.TabIndex = 1;
+            this.txtName.Text = "QuanLy";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // txtHostName
+            // cmbIP
             // 
-            this.txtHostName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtHostName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtHostName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtHostName.HintForeColor = System.Drawing.Color.Empty;
-            this.txtHostName.HintText = "";
-            this.txtHostName.isPassword = false;
-            this.txtHostName.LineFocusedColor = System.Drawing.Color.Blue;
-            this.txtHostName.LineIdleColor = System.Drawing.Color.Gray;
-            this.txtHostName.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.txtHostName.LineThickness = 3;
-            this.txtHostName.Location = new System.Drawing.Point(4, 188);
-            this.txtHostName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHostName.Name = "txtHostName";
-            this.txtHostName.Size = new System.Drawing.Size(198, 33);
-            this.txtHostName.TabIndex = 12;
-            this.txtHostName.Text = "127.0.0.1";
-            this.txtHostName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cmbIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.cmbIP.FormattingEnabled = true;
+            this.cmbIP.Location = new System.Drawing.Point(8, 213);
+            this.cmbIP.Name = "cmbIP";
+            this.cmbIP.Size = new System.Drawing.Size(135, 21);
+            this.cmbIP.TabIndex = 13;
+            // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.lblIP.Location = new System.Drawing.Point(7, 179);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(118, 17);
+            this.lblIP.TabIndex = 15;
+            this.lblIP.Text = "Địa chỉ IP máy chủ:";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 332);
+            this.ClientSize = new System.Drawing.Size(503, 270);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -259,6 +266,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox ckIsManager;
         private System.Windows.Forms.CheckBox ckIsEmployee;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtHostName;
+        private System.Windows.Forms.ComboBox cmbIP;
+        private System.Windows.Forms.Label lblIP;
     }
 }

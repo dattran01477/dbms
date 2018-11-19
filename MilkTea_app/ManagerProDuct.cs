@@ -122,12 +122,9 @@ namespace MilkTea_app
                     {
                         foreach (CategoryId a in arrcategory)
                         {
-                            if (a.categoyname == cmbCategory.SelectedItem.ToString())
-                            {
-                                data.postProducts(txtTensanpham.Text, txtGia.Text, a.categoryid);
+                                data.postProducts(txtTensanpham.Text, txtGia.Text,cmbCategory.SelectedText);
                                 loadDatacmb();
                                 break;
-                            }
                             
                         }
                         break;
@@ -138,7 +135,7 @@ namespace MilkTea_app
                         {
                             if (a.categoyname == cmbCategory.SelectedItem.ToString())
                             {
-                                data.updateProducts(txtTensanpham.Text, txtGia.Text, a.categoryid);
+                                data.updateProducts(txtTensanpham.Text, txtGia.Text, cmbCategory.SelectedText);
                                 loadDatacmb();
                                 break;
                             }
@@ -288,7 +285,7 @@ namespace MilkTea_app
                         {
                             if (a.categoyname == cmbCategory.SelectedItem.ToString())
                             {
-                                data.postProducts(txtTensanpham.Text, txtGia.Text, a.categoryid);
+                                data.postProducts(txtTensanpham.Text, txtGia.Text, cmbCategory.SelectedItem.ToString());
                                 loadDatacmb();
                                 break;
                             }
@@ -302,7 +299,7 @@ namespace MilkTea_app
                         {
                             if (a.categoyname == cmbCategory.SelectedItem.ToString())
                             {
-                                data.updateProducts(txtTensanpham.Text, txtGia.Text, a.categoryid);
+                                data.updateProducts(txtTensanpham.Text, txtGia.Text, cmbCategory.SelectedItem.ToString());
                                 loadDatacmb();
                                 break;
                             }

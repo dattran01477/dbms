@@ -52,11 +52,6 @@ namespace MilkTea_app
            
             margin = ((flowLayoutPnBtn.Width - 4 * 180) / (4 + 2));
             size = flowLayoutPnBtn.Width / 4;
-
-  
-
-
-
         }
 
         public PanelOrder(string userName, string pass)
@@ -198,6 +193,9 @@ namespace MilkTea_app
                 data.addOrder(bsonProductsOrder, int.Parse(txtSum.Text), int.Parse(txtDisCount.Text), "23");
                 bsonProductsOrder.Clear();
                 productsOrder.Clear();
+                DataTable temp = new DataTable();
+                gridControlOder.DataSource = temp;
+                
                 
 
             }
@@ -236,16 +234,27 @@ namespace MilkTea_app
         {
 
         }
-
+        public int AtOder;
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            AtOder = productsOrder.Count - 1;
             string column1Name = gridViewOrder.Columns[1].Name;
             if (gridViewOrder.RowCount>0)
             {
               
                 gridViewOrder.DeleteRow(gridViewOrder.FocusedRowHandle);
+                productsOrder.RemoveAt(0);
                
             }
+            txtSum.Text = SumPrice(productsOrder, int.Parse(txtDisCount.Text)).ToString();
+        }
+
+        private void GridViewOrder_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+        }
+
+        private void gridControlOder_Click_1(object sender, EventArgs e)
+        {
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
