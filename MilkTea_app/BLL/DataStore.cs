@@ -108,7 +108,12 @@ namespace MilkTea_app.BLL
                 {
                     us = new Userclass();
                     us.usersname = b["user"].AsString;
-                    us.role = b["roles"][1]["role"].ToString();
+                    us.pass = "";
+                    us.role = b["roles"][0]["role"].ToString();
+                    if(us.role== "executeEval")
+                    {
+                        us.role = b["roles"][1]["role"].ToString();
+                    }
                     ls.Add(us);
                 }
             }
@@ -118,6 +123,36 @@ namespace MilkTea_app.BLL
             }
 
             return ls;
+        }
+        public void addUser(string usernam,string pass,string role)
+        {
+            try
+            {
+                string str = "CreateUser('" + usernam + "','" + pass + "','" + role + "');";
+                MessageBox.Show(str);
+                var a = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Đã tồn tại user, kiểm tra lại!");
+                else MessageBox.Show("Thêm thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
+            }
+        }
+        public void deleteUser(string username)
+        {
+            try
+            {
+                string str = "dropUser('" + username + "');";
+                MessageBox.Show(str);
+                var a = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Lỗi xóa user, kiểm tra lại!");
+                else MessageBox.Show("Thêm thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
+            }
         }
         public void addEmployees(string MaNV,string TenNV,string Ngaysinh,string Diachi,string Chucvu)
         {

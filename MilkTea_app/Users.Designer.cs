@@ -77,6 +77,7 @@
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapnhat
             // 
@@ -105,6 +106,7 @@
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -119,6 +121,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panelText
             // 
@@ -163,6 +166,7 @@
             this.btnHuy.Size = new System.Drawing.Size(107, 41);
             this.btnHuy.TabIndex = 8;
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -188,6 +192,7 @@
             this.btnLuu.Size = new System.Drawing.Size(107, 41);
             this.btnLuu.TabIndex = 8;
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // cmbQuyen
             // 
@@ -264,6 +269,7 @@
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.Size = new System.Drawing.Size(333, 482);
             this.dgvUser.TabIndex = 5;
+            this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
             // 
             // Users
             // 

@@ -112,7 +112,7 @@ namespace MilkTea_app
             PingReply pr = e.Reply;
             if (e.Reply.Address.ToString() != "0.0.0.0" && e.Reply.Address.ToString() != ipAddress)
             {
-                cmbIP.Items.Add(e.Reply.Address.ToString());
+                //cmbIP.Items.Add(e.Reply.Address.ToString());
             }
         }
 
