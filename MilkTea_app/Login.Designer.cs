@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblIP = new System.Windows.Forms.Label();
+            this.cmbIP = new System.Windows.Forms.ComboBox();
             this.ckIsManager = new System.Windows.Forms.CheckBox();
             this.ckIsEmployee = new System.Windows.Forms.CheckBox();
             this.btnLogin = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -40,8 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtName = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.cmbIP = new System.Windows.Forms.ComboBox();
-            this.lblIP = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.lblIP);
             this.panel1.Controls.Add(this.cmbIP);
             this.panel1.Controls.Add(this.ckIsManager);
@@ -66,6 +68,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(503, 270);
             this.panel1.TabIndex = 0;
+            // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.lblIP.Location = new System.Drawing.Point(7, 179);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(118, 17);
+            this.lblIP.TabIndex = 15;
+            this.lblIP.Text = "Địa chỉ IP máy chủ:";
+            // 
+            // cmbIP
+            // 
+            this.cmbIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.cmbIP.FormattingEnabled = true;
+            this.cmbIP.Location = new System.Drawing.Point(8, 213);
+            this.cmbIP.Name = "cmbIP";
+            this.cmbIP.Size = new System.Drawing.Size(135, 21);
+            this.cmbIP.TabIndex = 13;
             // 
             // ckIsManager
             // 
@@ -214,24 +235,19 @@
             this.txtName.Text = "QuanLy";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // cmbIP
+            // button5
             // 
-            this.cmbIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
-            this.cmbIP.FormattingEnabled = true;
-            this.cmbIP.Location = new System.Drawing.Point(8, 213);
-            this.cmbIP.Name = "cmbIP";
-            this.cmbIP.Size = new System.Drawing.Size(135, 21);
-            this.cmbIP.TabIndex = 13;
-            // 
-            // lblIP
-            // 
-            this.lblIP.AutoSize = true;
-            this.lblIP.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.lblIP.Location = new System.Drawing.Point(7, 179);
-            this.lblIP.Name = "lblIP";
-            this.lblIP.Size = new System.Drawing.Size(118, 17);
-            this.lblIP.TabIndex = 15;
-            this.lblIP.Text = "Địa chỉ IP máy chủ:";
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(126)))), ((int)(((byte)(49)))));
+            this.button5.BackgroundImage = global::MilkTea_app.Properties.Resources.cancel;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(470, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 30);
+            this.button5.TabIndex = 16;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Login
             // 
@@ -268,5 +284,6 @@
         private System.Windows.Forms.CheckBox ckIsEmployee;
         private System.Windows.Forms.ComboBox cmbIP;
         private System.Windows.Forms.Label lblIP;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -36,6 +36,7 @@ namespace MilkTea_app
         public AppMilkTea()
         {
             InitializeComponent();
+            or = new Order();
             or.Dock = DockStyle.Fill;
             //  pnDGV.Controls.Clear();
             ql.AutoScaleMode = AutoScaleMode.None;
@@ -66,7 +67,7 @@ namespace MilkTea_app
 
         {
             lbName.Text = "Xin Chào  " + userName;
-            if (role.Any(e=>e.EndsWith("NhanVien1")))
+            if (role.Any(e=>e.EndsWith("NhanVien")))
             {
                 btnQuanLy.Hide();
                 btnThongKe.Hide();
@@ -176,6 +177,12 @@ namespace MilkTea_app
         {
             DataStore.roles = null;
             this.Close();
+        }
+
+        private void btnQuanLyTaiKhoang_Click(object sender, EventArgs e)
+        {
+            TaiKhoang taikhoan = new TaiKhoang(userName,pass);
+            taikhoan.Show();
         }
     }
 }

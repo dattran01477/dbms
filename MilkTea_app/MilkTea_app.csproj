@@ -101,6 +101,7 @@
     <Compile Include="DTO\Employees.cs" />
     <Compile Include="DTO\Products.cs" />
     <Compile Include="DTO\Topping.cs" />
+    <Compile Include="DTO\Userclass.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +158,18 @@
     <Compile Include="QuanLy.Designer.cs">
       <DependentUpon>QuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaiKhoang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiKhoang.Designer.cs">
+      <DependentUpon>TaiKhoang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -200,6 +213,12 @@
     </Compile>
     <EmbeddedResource Include="QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiKhoang.resx">
+      <DependentUpon>TaiKhoang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>

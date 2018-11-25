@@ -49,7 +49,7 @@ namespace MilkTea_app.BLL
 
         public DataStore()
         {
-            string stringConn = "mongodb://ThanhDat:123@localhost:27017";
+            string stringConn = "mongodb://admin:123@localhost:27017";
             try
             {
                 client = new MongoClient(stringConn);
@@ -62,9 +62,14 @@ namespace MilkTea_app.BLL
             }
         }
 
-       public List<Employees> GetEmployees()
+        public List<Employees> GetEmployees()
         {
+            //var doc = new BsonDocument(new Dictionary<string, string> { { "GetEmployees()", "" } });
+            //var command = new BsonDocumentCommand<int>(doc);
+            //var result = database.RunCommand(command);
+            //MessageBox.Show(result.ToString());
             List<Employees> employeesList = new List<Employees>();
+            //return employeesList;
             Employees employees;
             try
             {
@@ -89,6 +94,30 @@ namespace MilkTea_app.BLL
             }
             return employeesList;
 
+        }
+        public List<Userclass> getUsers()
+        {
+            Userclass us;
+            List<Userclass> ls = new List<Userclass>();
+            try
+            {
+                string str = "getUsers()";
+                var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                var array = reult["retval"].AsBsonArray;
+                foreach (var b in array)
+                {
+                    us = new Userclass();
+                    us.usersname = b["user"].AsString;
+                    us.role = b["roles"][1]["role"].ToString();
+                    ls.Add(us);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+            return ls;
         }
         public void addEmployees(string MaNV,string TenNV,string Ngaysinh,string Diachi,string Chucvu)
         {
@@ -589,7 +618,23 @@ namespace MilkTea_app.BLL
             roles = roles2;
             return roles2;
         }
+        public void Changpassword(string user,string pass)
+        {
+            string str = "changpassword('" + user + "','" + pass + "')";
+            try
+            {
+                var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                MessageBox.Show(reult.ToString());
+                if (reult["retval"].ToString() == "1") MessageBox.Show("Đã đổi mật khẩu thành công!");
+                else MessageBox.Show("Không thể đổi mật khẩu !");
 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        
 
     }
 }

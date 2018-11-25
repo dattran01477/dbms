@@ -54,11 +54,6 @@ namespace MilkTea_app
                     DataStore.roles = role;
                     this.Hide();
                     appMilkTea.FormClosing += AppMilkTea_FormClosing;
-
-
-
-
-
                 }
                 else
                 {
@@ -110,7 +105,6 @@ namespace MilkTea_app
                 p.SendAsync(ip, 100, ip);
             }
             cmbIP.Text = ipAddress;
-            MessageBox.Show("Đã quét xong IP");
         }
 
         private void p_PingCompleted(object sender, PingCompletedEventArgs e)
@@ -118,11 +112,13 @@ namespace MilkTea_app
             PingReply pr = e.Reply;
             if (e.Reply.Address.ToString() != "0.0.0.0" && e.Reply.Address.ToString() != ipAddress)
             {
-
                 cmbIP.Items.Add(e.Reply.Address.ToString());
             }
         }
 
-
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
