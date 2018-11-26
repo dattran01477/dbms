@@ -49,12 +49,11 @@ namespace MilkTea_app.BLL
 
         public DataStore()
         {
-            string stringConn = "mongodb://admin:123@localhost:27017";
+            string stringConn = "mongodb://QuanLy:123@"+hostName+":27017";
             try
             {
                 client = new MongoClient(stringConn);
                 database = client.GetDatabase("QuanLyTraSua");
-
             }
             catch (Exception e)
             {
@@ -108,7 +107,7 @@ namespace MilkTea_app.BLL
                 {
                     us = new Userclass();
                     us.usersname = b["user"].AsString;
-                    us.pass = "";
+                    us.pass = "********";
                     us.role = b["roles"][0]["role"].ToString();
                     if(us.role== "executeEval")
                     {
@@ -124,12 +123,11 @@ namespace MilkTea_app.BLL
 
             return ls;
         }
-        public void addUser(string usernam,string pass,string role)
+        public void addUser(string username,string pass,string role)
         {
             try
             {
-                string str = "CreateUser('" + usernam + "','" + pass + "','" + role + "');";
-                MessageBox.Show(str);
+                string str = "CreateUser('" + username + "','" + pass + "','" + role + "');";
                 var a = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Đã tồn tại user, kiểm tra lại!");
                 else MessageBox.Show("Thêm thành công");
@@ -143,11 +141,27 @@ namespace MilkTea_app.BLL
         {
             try
             {
-                string str = "dropUser('" + username + "');";
-                MessageBox.Show(str);
+                string str = "dropUsers('" + username + "');";
                 var a = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Lỗi xóa user, kiểm tra lại!");
-                else MessageBox.Show("Thêm thành công");
+                else MessageBox.Show("Xóa thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi rồi! Không thêm được dữ liệu!");
+            }
+        }
+        public void updateUser(string username,string password,string role)
+        {
+            try
+            {
+                string str = "dropUsers('" + username + "');";
+                var a = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
+                if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Lỗi rồi, kiểm tra lại!");
+                else
+                {
+                    addUser(username, password, role);
+                }
             }
             catch
             {
@@ -159,7 +173,6 @@ namespace MilkTea_app.BLL
             try
             {
                 string str = "addEmployees('" + MaNV + "','" + TenNV + "','" +Ngaysinh+ "','"+Diachi+"','"+Chucvu+"');";
-                MessageBox.Show(str);
                 var a=database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Đã tồn tại nhân viên, kiểm tra lại!");
                 else MessageBox.Show("Thêm thành công");
@@ -174,7 +187,6 @@ namespace MilkTea_app.BLL
             try
             {
                 string str = "deleteEmployees('" + Manv + "');";
-                MessageBox.Show(str);
                 database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 MessageBox.Show("Đã xóa thành công");
             }
@@ -188,7 +200,6 @@ namespace MilkTea_app.BLL
             try
             {
                 string str = "updateEmployees('" + MaNV + "','" + TenNV + "','" + Ngaysinh + "','" + Diachi + "','" + Chucvu + "');";
-                MessageBox.Show(str);
                 var a = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 if (a.GetElement("retval").ToString() == "retval=0") MessageBox.Show("Không thể cập nhật thông tin!");
                 else MessageBox.Show("Đã cập nhật thông tin thành công");
@@ -487,7 +498,6 @@ namespace MilkTea_app.BLL
             try
             {
                 string str = "addPoducts('" + name + "'," + price + ",'" + categoryId + "');";
-                MessageBox.Show(str);
                 var a=database.RunCommand<BsonDocument>(new BsonDocument { { "eval",str } });
                 if (a["retval"].ToString() == "1") MessageBox.Show("Đã thêm thành công");
                 else MessageBox.Show("Dữ liệu thêm vào bị lỗi rồi!");
@@ -503,7 +513,6 @@ namespace MilkTea_app.BLL
             try
             {
                 string str = "updateProducts('" + name + "'," + price + "," + "ObjectId('" + categoryId + "'));";
-                MessageBox.Show(str);
                 database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 MessageBox.Show("Đã thêm thành công");
             }
@@ -537,7 +546,6 @@ namespace MilkTea_app.BLL
             {
                 string str = "insertCategory('" + name + "','" +type + "');";
                 var a=database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
-                //MessageBox.Show(a["retval"].ToString());
                 if (a["retval"].ToString() == "1") MessageBox.Show("Đã thêm thành công");
                 else MessageBox.Show("Dữ liệu thêm vào bị lỗi rồi!");
             }
@@ -551,7 +559,6 @@ namespace MilkTea_app.BLL
             try
             {
                 string str = "updateCategory('" + name + "'," + type + ");";
-                MessageBox.Show(str);
                 database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
                 MessageBox.Show("Đã thêm thành công");
             }
@@ -659,7 +666,6 @@ namespace MilkTea_app.BLL
             try
             {
                 var reult = database.RunCommand<BsonDocument>(new BsonDocument { { "eval", str } });
-                MessageBox.Show(reult.ToString());
                 if (reult["retval"].ToString() == "1") MessageBox.Show("Đã đổi mật khẩu thành công!");
                 else MessageBox.Show("Không thể đổi mật khẩu !");
 

@@ -99,7 +99,6 @@ namespace MilkTea_app
             for (int i = 0; i < 255; i++)
             {
                 string ip = ipBase + i.ToString();
-
                 Ping p = new Ping();
                 p.PingCompleted += new PingCompletedEventHandler(p_PingCompleted);
                 p.SendAsync(ip, 100, ip);
@@ -112,7 +111,7 @@ namespace MilkTea_app
             PingReply pr = e.Reply;
             if (e.Reply.Address.ToString() != "0.0.0.0" && e.Reply.Address.ToString() != ipAddress)
             {
-                //cmbIP.Items.Add(e.Reply.Address.ToString());
+                cmbIP.Items.Add(e.Reply.Address.ToString());
             }
         }
 

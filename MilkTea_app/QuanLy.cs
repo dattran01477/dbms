@@ -47,7 +47,7 @@ namespace MilkTea_app
             managerCategory = new Manager(userName, pass);
             managerProDuct = new ManagerProDuct(userName,pass);
             managerEmployees = new ManagerEmployees(userName,pass);
-            usersmanager = new Users();
+            usersmanager = new Users(userName,pass);
             //  pnDGV.Controls.Clear();
             managerCategory.AutoScaleMode = AutoScaleMode.None;
             managerProDuct.AutoScaleMode = AutoScaleMode.None;

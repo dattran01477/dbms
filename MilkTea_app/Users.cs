@@ -17,34 +17,46 @@ namespace MilkTea_app
         public int statusManager = 0;
         DataStore data;
         List<Userclass> listUsers;
-
+        private string userName;
+        private string pass;
         public Users()
         {
             
             InitializeComponent();
             LoadData();
         }
-        private string userName;
-        private string pass;
+        public Users(string username,string password)
+        {
+            this.userName = username;
+            this.pass = password;
+            InitializeComponent();
+            LoadData();
+        }
+        
         public void LoadData()
         {
             listUsers = new List<Userclass>();
             
             listUsers.Clear();
-            data = new DataStore();
+            data = new DataStore(userName,pass);
             listUsers = data.getUsers();
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable(userName,pass);
             dt.Columns.Add("User");
             dt.Columns.Add("Quyen");
             dt.Columns.Add("Password");
+            bool itemcmp = true;
             foreach (var a in listUsers)
             {
+                itemcmp = true;
                 dt.Rows.Add(a.usersname,a.role,a.pass);
+                foreach (var items in cmbQuyen.Items)
+                {
+                    if (a.role == items.ToString()) itemcmp = false;
+                    
+                }
+                if (itemcmp) { cmbQuyen.Items.Add(a.role); }
+               
             }
-            //foreach (var a in listUsers)
-            //{
-            //    MessageBox.Show(a.usersname);
-            //}
             dgvUser.Font = new Font("Century Gothic",11);
             dgvUser.DataSource = dt;
         }
@@ -64,7 +76,7 @@ namespace MilkTea_app
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            data.deleteEmployees(txtUsername.Text);
+            data.deleteUser(txtUsername.Text);
             statusManager = 0;
             loadButton();
             resetText();
@@ -82,13 +94,13 @@ namespace MilkTea_app
                     }
                 case 1:
                     {
-                        //data.addEmployees(txtMaNV.Text, txtTenNV.Text, txtNgaysinh.Text, txtDiachi.Text, cmbChucvu.SelectedItem.ToString());
+                        data.addUser(txtUsername.Text,txtPassword.Text,cmbQuyen.Text);
                         LoadData();
                         break;
                     }
                 case 2:
                     {
-                        //data.updateEmployees(txtMaNV.Text, txtTenNV.Text, txtNgaysinh.Text, txtDiachi.Text, cmbChucvu.SelectedItem.ToString());
+                        data.updateUser(txtUsername.Text, txtPassword.Text, cmbQuyen.Text);
                         LoadData();
                         break;
                     }
@@ -172,7 +184,6 @@ namespace MilkTea_app
                         btnSua.Enabled = true;
                         btnCapnhat.Enabled = true;
                         btnXoa.Enabled = true;
-                        btnXoa.Enabled = false;
                         txtUsername.Enabled = false;
                         txtPassword.Enabled = false;
                         btnLuu.Enabled = false;
@@ -201,10 +212,12 @@ namespace MilkTea_app
 
         private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            statusManager = 4;
             txtUsername.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
            cmbQuyen.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
             loadButton();
             btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
     }
 }

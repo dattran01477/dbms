@@ -60,7 +60,9 @@
             // 
             // dgvEmployees
             // 
-            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployees.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -149,8 +151,7 @@
             // 
             // panelText
             // 
-            this.panelText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelText.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panelText.Controls.Add(this.btnHuy);
@@ -179,6 +180,7 @@
             this.btnHuy.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnHuy.ActiveForecolor = System.Drawing.Color.White;
             this.btnHuy.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHuy.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnHuy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHuy.BackgroundImage")));
             this.btnHuy.ButtonText = "Hủy";
@@ -205,6 +207,7 @@
             this.btnLuu.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnLuu.ActiveForecolor = System.Drawing.Color.White;
             this.btnLuu.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLuu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLuu.BackgroundImage")));
             this.btnLuu.ButtonText = "Lưu";
@@ -226,8 +229,10 @@
             // 
             // cmbChucvu
             // 
+            this.cmbChucvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbChucvu.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.cmbChucvu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbChucvu.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbChucvu.FormattingEnabled = true;
             this.cmbChucvu.Location = new System.Drawing.Point(152, 154);
             this.cmbChucvu.Margin = new System.Windows.Forms.Padding(2);
@@ -237,6 +242,7 @@
             // 
             // lblNgaysinh
             // 
+            this.lblNgaysinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNgaysinh.AutoSize = true;
             this.lblNgaysinh.Location = new System.Drawing.Point(15, 90);
             this.lblNgaysinh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -247,6 +253,7 @@
             // 
             // txtDiachi
             // 
+            this.txtDiachi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiachi.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtDiachi.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtDiachi.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -260,6 +267,7 @@
             // 
             // txtTenNV
             // 
+            this.txtTenNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenNV.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtTenNV.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtTenNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -274,6 +282,7 @@
             // 
             // txtNgaysinh
             // 
+            this.txtNgaysinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNgaysinh.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtNgaysinh.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtNgaysinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -288,6 +297,7 @@
             // 
             // txtMaNV
             // 
+            this.txtMaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaNV.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtMaNV.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtMaNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -301,6 +311,7 @@
             // 
             // lblChucvu
             // 
+            this.lblChucvu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblChucvu.AutoSize = true;
             this.lblChucvu.Location = new System.Drawing.Point(15, 161);
             this.lblChucvu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -311,6 +322,7 @@
             // 
             // lblDiachi
             // 
+            this.lblDiachi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDiachi.AutoSize = true;
             this.lblDiachi.Location = new System.Drawing.Point(15, 127);
             this.lblDiachi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -321,6 +333,7 @@
             // 
             // lblTenNV
             // 
+            this.lblTenNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTenNV.AutoSize = true;
             this.lblTenNV.Location = new System.Drawing.Point(15, 53);
             this.lblTenNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -331,6 +344,7 @@
             // 
             // lblMaNV
             // 
+            this.lblMaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMaNV.AutoSize = true;
             this.lblMaNV.Location = new System.Drawing.Point(15, 16);
             this.lblMaNV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

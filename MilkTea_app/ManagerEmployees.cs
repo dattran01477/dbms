@@ -30,7 +30,7 @@ namespace MilkTea_app
             this.userName = userName;
             this.pass = pass;
             InitializeComponent();
-            data = new DataStore(userName, pass);
+            data = new DataStore(userName,pass);
             if (data.isConnect)
                 LoadData();
             else
@@ -98,7 +98,7 @@ namespace MilkTea_app
                     }
                 case 1:
                     {
-                        data.addEmployees(txtMaNV.Text,txtTenNV.Text, txtNgaysinh.Text,txtDiachi.Text,cmbChucvu.SelectedItem.ToString());
+                        data.addEmployees(txtMaNV.Text, txtTenNV.Text, txtNgaysinh.Text, txtDiachi.Text, cmbChucvu.SelectedItem.ToString());
                         LoadData();
                         break;
                     }
@@ -196,7 +196,6 @@ namespace MilkTea_app
                         btnSua.Enabled = true;
                         btnCapnhat.Enabled = true;
                         btnXoa.Enabled = true;
-                        btnXoa.Enabled = false;
                         txtTenNV.Enabled = false;
                         txtNgaysinh.Enabled = false;
                         txtMaNV.Enabled = false;
@@ -218,6 +217,7 @@ namespace MilkTea_app
             txtMaNV.ResetText();
             txtNgaysinh.ResetText();
             txtTenNV.ResetText();
+            cmbChucvu.ResetText();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -229,7 +229,7 @@ namespace MilkTea_app
 
         private void dgvEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show(dgvEmployees.CurrentRow.Cells[0].ToString());
+            statusManager = 4;
             txtMaNV.Text = dgvEmployees.CurrentRow.Cells[0].Value.ToString();
             txtTenNV.Text = dgvEmployees.CurrentRow.Cells[1].Value.ToString();
             txtNgaysinh.Text= dgvEmployees.CurrentRow.Cells[2].Value.ToString();

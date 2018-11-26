@@ -67,7 +67,7 @@ namespace MilkTea_app
 
         {
             lbName.Text = "Xin Chào  " + userName;
-            if (role.Any(e=>e.EndsWith("NhanVien")))
+            if (role.Any(e=>e.EndsWith("NhanVien1")))
             {
                 btnQuanLy.Hide();
                 btnThongKe.Hide();
